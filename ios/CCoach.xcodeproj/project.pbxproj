@@ -1,0 +1,1345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* CCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CCoachTests.m */; };
+		116880C18E1F265E800BF0F5 /* libPods-CCoach-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FA4BD33C3D4B81245A5F90 /* libPods-CCoach-tvOS.a */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		17E3B6A9D4785669D615D9FA /* libPods-CCoach-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78605146F3EB05554C453D /* libPods-CCoach-tvOSTests.a */; };
+		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* CCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CCoachTests.m */; };
+		4094F8148EE24D209C6E05A2 /* libPods-CCoachTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C8E49E238BC86D0096D414 /* libPods-CCoachTests.a */; };
+		9416270078D5003F3F642D82 /* libPods-CCoach-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C8E498238BC86D0096D414 /* libPods-CCoach-tvOS.a */; };
+		A0F61BBF34B452DF20EAEB38 /* libPods-CCoachTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55400ADD460A3DDB935436BB /* libPods-CCoachTests.a */; };
+		AB35992BF00F5F7DD85E89C8 /* libPods-CCoach.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C8E49C238BC86D0096D414 /* libPods-CCoach.a */; };
+		C86399DD239E51BF0006DCC8 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C86399DA239E51BF0006DCC8 /* Oswald-Regular.ttf */; };
+		C86399DE239E51BF0006DCC8 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C86399DB239E51BF0006DCC8 /* Oswald-Light.ttf */; };
+		C86399DF239E51BF0006DCC8 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C86399DC239E51BF0006DCC8 /* Oswald-Bold.ttf */; };
+		C8E846E8238E89AB008B87BD /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E846E7238E89AB008B87BD /* libRNSVG.a */; };
+		C8E9C467238BD770002D438C /* libDoubleConversion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C466238BD770002D438C /* libDoubleConversion.a */; };
+		C8E9C469238BD770002D438C /* libFBReactNativeSpec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C468238BD770002D438C /* libFBReactNativeSpec.a */; };
+		C8E9C46B238BD770002D438C /* libFolly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C46A238BD770002D438C /* libFolly.a */; };
+		C8E9C46D238BD770002D438C /* libglog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C46C238BD770002D438C /* libglog.a */; };
+		C8E9C475238BD770002D438C /* libRCTTypeSafety.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C474238BD770002D438C /* libRCTTypeSafety.a */; };
+		C8E9C477238BD770002D438C /* libReact-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C476238BD770002D438C /* libReact-Core.a */; };
+		C8E9C479238BD770002D438C /* libReact-CoreModules.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C478238BD770002D438C /* libReact-CoreModules.a */; };
+		C8E9C47B238BD770002D438C /* libReact-cxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C47A238BD770002D438C /* libReact-cxxreact.a */; };
+		C8E9C47D238BD770002D438C /* libReact-jsi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C47C238BD770002D438C /* libReact-jsi.a */; };
+		C8E9C47F238BD770002D438C /* libReact-jsiexecutor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C47E238BD770002D438C /* libReact-jsiexecutor.a */; };
+		C8E9C481238BD770002D438C /* libReact-jsinspector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C480238BD770002D438C /* libReact-jsinspector.a */; };
+		C8E9C487238BD770002D438C /* libreact-native-sqlite-storage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C486238BD770002D438C /* libreact-native-sqlite-storage.a */; };
+		C8E9C489238BD770002D438C /* libReact-RCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C488238BD770002D438C /* libReact-RCTActionSheet.a */; };
+		C8E9C48B238BD770002D438C /* libReact-RCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C48A238BD770002D438C /* libReact-RCTAnimation.a */; };
+		C8E9C48D238BD770002D438C /* libReact-RCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C48C238BD770002D438C /* libReact-RCTBlob.a */; };
+		C8E9C48F238BD770002D438C /* libReact-RCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C48E238BD770002D438C /* libReact-RCTImage.a */; };
+		C8E9C491238BD770002D438C /* libReact-RCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C490238BD770002D438C /* libReact-RCTLinking.a */; };
+		C8E9C493238BD770002D438C /* libReact-RCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C492238BD770002D438C /* libReact-RCTNetwork.a */; };
+		C8E9C495238BD770002D438C /* libReact-RCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C494238BD770002D438C /* libReact-RCTSettings.a */; };
+		C8E9C497238BD770002D438C /* libReact-RCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C496238BD770002D438C /* libReact-RCTText.a */; };
+		C8E9C499238BD770002D438C /* libReact-RCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C498238BD770002D438C /* libReact-RCTVibration.a */; };
+		C8E9C49B238BD770002D438C /* libReactCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C49A238BD770002D438C /* libReactCommon.a */; };
+		C8E9C49D238BD770002D438C /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C49C238BD770002D438C /* libReactNativeNavigation.a */; };
+		C8E9C4A1238BD770002D438C /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C4A0238BD770002D438C /* libRNGestureHandler.a */; };
+		C8E9C4A3238BD770002D438C /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C4A2238BD770002D438C /* libRNVectorIcons.a */; };
+		C8E9C4A5238BD770002D438C /* libYoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C4A4238BD770002D438C /* libYoga.a */; };
+		C8E9C4A7238BD90A002D438C /* libreact-native-date-picker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C4A6238BD90A002D438C /* libreact-native-date-picker.a */; };
+		C8E9C4A9238BD90A002D438C /* libreact-native-image-picker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C4A8238BD90A002D438C /* libreact-native-image-picker.a */; };
+		C8E9C4AD238BDF66002D438C /* libRNCPushNotificationIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E9C4AC238BDF66002D438C /* libRNCPushNotificationIOS.a */; };
+		FDC58A802BC936EA11B93BCF /* libPods-CCoach-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C8E49A238BC86D0096D414 /* libPods-CCoach-tvOSTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = CCoach;
+		};
+		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
+			remoteInfo = "CCoach-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		00E356EE1AD99517003FC87E /* CCoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCoachTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* CCoachTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCoachTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* CCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CCoach/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CCoach/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CCoach/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CCoach/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CCoach/main.m; sourceTree = "<group>"; };
+		173502F4773F4A90A6309336 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		1BD0CC1A2310409E8DDB8570 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		1FAE48DBB3D548B3BEB5AB42 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* CCoach-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCoach-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* CCoach-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CCoach-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAD44B8652145C09D72CC8B /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		2FE2D2408B8D9271318F0958 /* Pods-CCoach-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCoach-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CCoach-tvOSTests/Pods-CCoach-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A28225E0A9044BFAFF3B021 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		3A8C9B6F79BE4C30A7E1FDE0 /* Pods-CCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCoach.debug.xcconfig"; path = "Target Support Files/Pods-CCoach/Pods-CCoach.debug.xcconfig"; sourceTree = "<group>"; };
+		525E5D9C769AD1BD560B1205 /* libPods-CCoach.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCoach.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55400ADD460A3DDB935436BB /* libPods-CCoachTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCoachTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		593A768F212F435A0EA26D5D /* Pods-CCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCoach.release.xcconfig"; path = "Target Support Files/Pods-CCoach/Pods-CCoach.release.xcconfig"; sourceTree = "<group>"; };
+		59DEEF2DE6B244A880F1416C /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		5A948CBEC68941868BBD1F14 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		60720930EDB54160BF8E70EC /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		6A78605146F3EB05554C453D /* libPods-CCoach-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCoach-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EC76D8A409243EAA1ABA626 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
+		81E7EAB6F49A4FF3B666F7A3 /* libRNLocalNotifications.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNLocalNotifications.a; sourceTree = "<group>"; };
+		8FEBD2A8E8344EDC822F1657 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/native-base/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		9D50AD45964CED3E3640C4CC /* Pods-CCoachTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCoachTests.release.xcconfig"; path = "Target Support Files/Pods-CCoachTests/Pods-CCoachTests.release.xcconfig"; sourceTree = "<group>"; };
+		AABACCA2E57842248D29B13A /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		B5B1B5015DC6486E844F58B5 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		BAA8940A44F845A88BF24375 /* RNLocalNotifications.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNLocalNotifications.xcodeproj; path = "../node_modules/react-native-local-notifications/ios/RNLocalNotifications.xcodeproj"; sourceTree = "<group>"; };
+		BE4DA3C443C74EB19E33B1C8 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		C6DEAC2B7369413085D37EA3 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		C86399DA239E51BF0006DCC8 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Regular.ttf"; path = "../../../../../../Downloads/oswald/Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		C86399DB239E51BF0006DCC8 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Light.ttf"; path = "../../../../../../Downloads/oswald/Oswald-Light.ttf"; sourceTree = "<group>"; };
+		C86399DC239E51BF0006DCC8 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Bold.ttf"; path = "../../../../../../Downloads/oswald/Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		C890644223CDD602003701E7 /* CCoach.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CCoach.entitlements; path = CCoach/CCoach.entitlements; sourceTree = "<group>"; };
+		C8C8E450238BAD940096D414 /* libDoubleConversion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDoubleConversion.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E452238BAD940096D414 /* libFBReactNativeSpec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBReactNativeSpec.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E454238BAD940096D414 /* libFolly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFolly.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E456238BAD940096D414 /* libglog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglog.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E45E238BAD940096D414 /* libRCTTypeSafety.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRCTTypeSafety.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E460238BAD940096D414 /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E462238BAD940096D414 /* libReact-CoreModules.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-CoreModules.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E464238BAD940096D414 /* libReact-cxxreact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-cxxreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E466238BAD940096D414 /* libReact-jsi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E468238BAD940096D414 /* libReact-jsiexecutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsiexecutor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E46A238BAD940096D414 /* libReact-jsinspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsinspector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E46C238BAD940096D414 /* libreact-native-date-picker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-date-picker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E46E238BAD940096D414 /* libreact-native-image-picker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-image-picker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E470238BAD940096D414 /* libreact-native-sqlite-storage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-sqlite-storage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E472238BAD940096D414 /* libReact-RCTActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTActionSheet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E474238BAD940096D414 /* libReact-RCTAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E476238BAD940096D414 /* libReact-RCTBlob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTBlob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E478238BAD940096D414 /* libReact-RCTImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E47A238BAD940096D414 /* libReact-RCTLinking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTLinking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E47C238BAD940096D414 /* libReact-RCTNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E47E238BAD940096D414 /* libReact-RCTSettings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTSettings.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E480238BAD940096D414 /* libReact-RCTText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTText.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E482238BAD940096D414 /* libReact-RCTVibration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTVibration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E484238BAD940096D414 /* libReactCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E486238BAD940096D414 /* libReactNativeNavigation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactNativeNavigation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E488238BAD940096D414 /* libRNDateTimePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNDateTimePicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E48A238BAD940096D414 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E48C238BAD940096D414 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E48E238BAD940096D414 /* libYoga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E490238BC86D0096D414 /* libDoubleConversion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDoubleConversion.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E492238BC86D0096D414 /* libFBReactNativeSpec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBReactNativeSpec.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E494238BC86D0096D414 /* libFolly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFolly.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E496238BC86D0096D414 /* libglog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglog.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E498238BC86D0096D414 /* libPods-CCoach-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-CCoach-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E49A238BC86D0096D414 /* libPods-CCoach-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-CCoach-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E49C238BC86D0096D414 /* libPods-CCoach.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-CCoach.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E49E238BC86D0096D414 /* libPods-CCoachTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-CCoachTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4A0238BC86D0096D414 /* libRCTTypeSafety.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRCTTypeSafety.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4A2238BC86D0096D414 /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4A4238BC86D0096D414 /* libReact-CoreModules.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-CoreModules.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4A6238BC86D0096D414 /* libReact-cxxreact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-cxxreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4A8238BC86D0096D414 /* libReact-jsi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4AA238BC86D0096D414 /* libReact-jsiexecutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsiexecutor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4AC238BC86D0096D414 /* libReact-jsinspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsinspector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4AE238BC86D0096D414 /* libReact-RCTActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTActionSheet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4B0238BC86D0096D414 /* libReact-RCTAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4B2238BC86D0096D414 /* libReact-RCTBlob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTBlob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4B4238BC86D0096D414 /* libReact-RCTImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4B6238BC86D0096D414 /* libReact-RCTLinking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTLinking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4B8238BC86D0096D414 /* libReact-RCTNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4BA238BC86D0096D414 /* libReact-RCTSettings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTSettings.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4BC238BC86D0096D414 /* libReact-RCTText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTText.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4BE238BC86D0096D414 /* libReact-RCTVibration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTVibration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4C0238BC86D0096D414 /* libReactCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C8E4C2238BC86D0096D414 /* libYoga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E846E7238E89AB008B87BD /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNSVG.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C466238BD770002D438C /* libDoubleConversion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDoubleConversion.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C468238BD770002D438C /* libFBReactNativeSpec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBReactNativeSpec.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C46A238BD770002D438C /* libFolly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFolly.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C46C238BD770002D438C /* libglog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglog.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C474238BD770002D438C /* libRCTTypeSafety.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRCTTypeSafety.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C476238BD770002D438C /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C478238BD770002D438C /* libReact-CoreModules.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-CoreModules.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C47A238BD770002D438C /* libReact-cxxreact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-cxxreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C47C238BD770002D438C /* libReact-jsi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C47E238BD770002D438C /* libReact-jsiexecutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsiexecutor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C480238BD770002D438C /* libReact-jsinspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-jsinspector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C482238BD770002D438C /* libreact-native-date-picker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-date-picker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C484238BD770002D438C /* libreact-native-image-picker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-image-picker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C486238BD770002D438C /* libreact-native-sqlite-storage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-sqlite-storage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C488238BD770002D438C /* libReact-RCTActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTActionSheet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C48A238BD770002D438C /* libReact-RCTAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C48C238BD770002D438C /* libReact-RCTBlob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTBlob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C48E238BD770002D438C /* libReact-RCTImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C490238BD770002D438C /* libReact-RCTLinking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTLinking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C492238BD770002D438C /* libReact-RCTNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C494238BD770002D438C /* libReact-RCTSettings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTSettings.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C496238BD770002D438C /* libReact-RCTText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTText.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C498238BD770002D438C /* libReact-RCTVibration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTVibration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C49A238BD770002D438C /* libReactCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C49C238BD770002D438C /* libReactNativeNavigation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactNativeNavigation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C49E238BD770002D438C /* libRNDateTimePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNDateTimePicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C4A0238BD770002D438C /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C4A2238BD770002D438C /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C4A4238BD770002D438C /* libYoga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C4A6238BD90A002D438C /* libreact-native-date-picker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-date-picker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C4A8238BD90A002D438C /* libreact-native-image-picker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-image-picker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C4AA238BD90A002D438C /* libRNDateTimePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNDateTimePicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C4AC238BDF66002D438C /* libRNCPushNotificationIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNCPushNotificationIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C4AE238BEAB8002D438C /* libReactNativeART.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactNativeART.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB57DEE9686444B586C64080 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		CF857FA6074EECF4328D99B8 /* Pods-CCoachTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCoachTests.debug.xcconfig"; path = "Target Support Files/Pods-CCoachTests/Pods-CCoachTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D61A75B0B09E4064AD4197F3 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		DDBCFC8EDB4F8B71A92167C1 /* Pods-CCoach-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCoach-tvOS.release.xcconfig"; path = "Target Support Files/Pods-CCoach-tvOS/Pods-CCoach-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		E3A4EAAA851D4F35AD69CED0 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
+		E73B5F1F8D955636C7695FCF /* Pods-CCoach-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCoach-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-CCoach-tvOSTests/Pods-CCoach-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E73CBB3AF2C90816E491941B /* Pods-CCoach-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCoach-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-CCoach-tvOS/Pods-CCoach-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E7FA4BD33C3D4B81245A5F90 /* libPods-CCoach-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCoach-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F4C02FAAD58D4AE880B0586D /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		F83B8ECAE85F4913AF70ED4F /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F61BBF34B452DF20EAEB38 /* libPods-CCoachTests.a in Frameworks */,
+				4094F8148EE24D209C6E05A2 /* libPods-CCoachTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8E846E8238E89AB008B87BD /* libRNSVG.a in Frameworks */,
+				C8E9C4AD238BDF66002D438C /* libRNCPushNotificationIOS.a in Frameworks */,
+				C8E9C4A7238BD90A002D438C /* libreact-native-date-picker.a in Frameworks */,
+				C8E9C4A9238BD90A002D438C /* libreact-native-image-picker.a in Frameworks */,
+				C8E9C467238BD770002D438C /* libDoubleConversion.a in Frameworks */,
+				C8E9C469238BD770002D438C /* libFBReactNativeSpec.a in Frameworks */,
+				C8E9C46B238BD770002D438C /* libFolly.a in Frameworks */,
+				C8E9C46D238BD770002D438C /* libglog.a in Frameworks */,
+				C8E9C475238BD770002D438C /* libRCTTypeSafety.a in Frameworks */,
+				C8E9C477238BD770002D438C /* libReact-Core.a in Frameworks */,
+				C8E9C479238BD770002D438C /* libReact-CoreModules.a in Frameworks */,
+				C8E9C47B238BD770002D438C /* libReact-cxxreact.a in Frameworks */,
+				C8E9C47D238BD770002D438C /* libReact-jsi.a in Frameworks */,
+				C8E9C47F238BD770002D438C /* libReact-jsiexecutor.a in Frameworks */,
+				C8E9C481238BD770002D438C /* libReact-jsinspector.a in Frameworks */,
+				C8E9C487238BD770002D438C /* libreact-native-sqlite-storage.a in Frameworks */,
+				C8E9C489238BD770002D438C /* libReact-RCTActionSheet.a in Frameworks */,
+				C8E9C48B238BD770002D438C /* libReact-RCTAnimation.a in Frameworks */,
+				C8E9C48D238BD770002D438C /* libReact-RCTBlob.a in Frameworks */,
+				C8E9C48F238BD770002D438C /* libReact-RCTImage.a in Frameworks */,
+				C8E9C491238BD770002D438C /* libReact-RCTLinking.a in Frameworks */,
+				C8E9C493238BD770002D438C /* libReact-RCTNetwork.a in Frameworks */,
+				C8E9C495238BD770002D438C /* libReact-RCTSettings.a in Frameworks */,
+				C8E9C497238BD770002D438C /* libReact-RCTText.a in Frameworks */,
+				C8E9C499238BD770002D438C /* libReact-RCTVibration.a in Frameworks */,
+				C8E9C49B238BD770002D438C /* libReactCommon.a in Frameworks */,
+				C8E9C49D238BD770002D438C /* libReactNativeNavigation.a in Frameworks */,
+				C8E9C4A1238BD770002D438C /* libRNGestureHandler.a in Frameworks */,
+				C8E9C4A3238BD770002D438C /* libRNVectorIcons.a in Frameworks */,
+				C8E9C4A5238BD770002D438C /* libYoga.a in Frameworks */,
+				AB35992BF00F5F7DD85E89C8 /* libPods-CCoach.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4781E0B4A5D006451C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				116880C18E1F265E800BF0F5 /* libPods-CCoach-tvOS.a in Frameworks */,
+				9416270078D5003F3F642D82 /* libPods-CCoach-tvOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48D1E0B4A5D006451C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17E3B6A9D4785669D615D9FA /* libPods-CCoach-tvOSTests.a in Frameworks */,
+				FDC58A802BC936EA11B93BCF /* libPods-CCoach-tvOSTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* CCoachTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* CCoachTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = CCoachTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		036E8B5D7CA940148D4A1767 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C86399DC239E51BF0006DCC8 /* Oswald-Bold.ttf */,
+				C86399DB239E51BF0006DCC8 /* Oswald-Light.ttf */,
+				C86399DA239E51BF0006DCC8 /* Oswald-Regular.ttf */,
+				7EC76D8A409243EAA1ABA626 /* Roboto_medium.ttf */,
+				F83B8ECAE85F4913AF70ED4F /* Roboto.ttf */,
+				E3A4EAAA851D4F35AD69CED0 /* rubicon-icon-font.ttf */,
+				3A28225E0A9044BFAFF3B021 /* AntDesign.ttf */,
+				AABACCA2E57842248D29B13A /* Entypo.ttf */,
+				60720930EDB54160BF8E70EC /* EvilIcons.ttf */,
+				C6DEAC2B7369413085D37EA3 /* Feather.ttf */,
+				F4C02FAAD58D4AE880B0586D /* FontAwesome.ttf */,
+				1FAE48DBB3D548B3BEB5AB42 /* FontAwesome5_Brands.ttf */,
+				1BD0CC1A2310409E8DDB8570 /* FontAwesome5_Regular.ttf */,
+				2EAD44B8652145C09D72CC8B /* FontAwesome5_Solid.ttf */,
+				8FEBD2A8E8344EDC822F1657 /* Fontisto.ttf */,
+				59DEEF2DE6B244A880F1416C /* Foundation.ttf */,
+				CB57DEE9686444B586C64080 /* Ionicons.ttf */,
+				BE4DA3C443C74EB19E33B1C8 /* MaterialCommunityIcons.ttf */,
+				D61A75B0B09E4064AD4197F3 /* MaterialIcons.ttf */,
+				173502F4773F4A90A6309336 /* Octicons.ttf */,
+				5A948CBEC68941868BBD1F14 /* SimpleLineIcons.ttf */,
+				B5B1B5015DC6486E844F58B5 /* Zocial.ttf */,
+			);
+			name = Resources;
+			path = "../node_modules/react-native-vector-icons/Fonts";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* CCoach */ = {
+			isa = PBXGroup;
+			children = (
+				C890644223CDD602003701E7 /* CCoach.entitlements */,
+				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = CCoach;
+			sourceTree = "<group>";
+		};
+		29141ECE7730CA352FFB907C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C9B6F79BE4C30A7E1FDE0 /* Pods-CCoach.debug.xcconfig */,
+				593A768F212F435A0EA26D5D /* Pods-CCoach.release.xcconfig */,
+				E73CBB3AF2C90816E491941B /* Pods-CCoach-tvOS.debug.xcconfig */,
+				DDBCFC8EDB4F8B71A92167C1 /* Pods-CCoach-tvOS.release.xcconfig */,
+				2FE2D2408B8D9271318F0958 /* Pods-CCoach-tvOSTests.debug.xcconfig */,
+				E73B5F1F8D955636C7695FCF /* Pods-CCoach-tvOSTests.release.xcconfig */,
+				CF857FA6074EECF4328D99B8 /* Pods-CCoachTests.debug.xcconfig */,
+				9D50AD45964CED3E3640C4CC /* Pods-CCoachTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8E846E7238E89AB008B87BD /* libRNSVG.a */,
+				C8E9C4AE238BEAB8002D438C /* libReactNativeART.a */,
+				C8E9C4AC238BDF66002D438C /* libRNCPushNotificationIOS.a */,
+				C8E9C4A6238BD90A002D438C /* libreact-native-date-picker.a */,
+				C8E9C4A8238BD90A002D438C /* libreact-native-image-picker.a */,
+				C8E9C4AA238BD90A002D438C /* libRNDateTimePicker.a */,
+				C8E9C466238BD770002D438C /* libDoubleConversion.a */,
+				C8E9C468238BD770002D438C /* libFBReactNativeSpec.a */,
+				C8E9C46A238BD770002D438C /* libFolly.a */,
+				C8E9C46C238BD770002D438C /* libglog.a */,
+				C8E9C474238BD770002D438C /* libRCTTypeSafety.a */,
+				C8E9C476238BD770002D438C /* libReact-Core.a */,
+				C8E9C478238BD770002D438C /* libReact-CoreModules.a */,
+				C8E9C47A238BD770002D438C /* libReact-cxxreact.a */,
+				C8E9C47C238BD770002D438C /* libReact-jsi.a */,
+				C8E9C47E238BD770002D438C /* libReact-jsiexecutor.a */,
+				C8E9C480238BD770002D438C /* libReact-jsinspector.a */,
+				C8E9C482238BD770002D438C /* libreact-native-date-picker.a */,
+				C8E9C484238BD770002D438C /* libreact-native-image-picker.a */,
+				C8E9C486238BD770002D438C /* libreact-native-sqlite-storage.a */,
+				C8E9C488238BD770002D438C /* libReact-RCTActionSheet.a */,
+				C8E9C48A238BD770002D438C /* libReact-RCTAnimation.a */,
+				C8E9C48C238BD770002D438C /* libReact-RCTBlob.a */,
+				C8E9C48E238BD770002D438C /* libReact-RCTImage.a */,
+				C8E9C490238BD770002D438C /* libReact-RCTLinking.a */,
+				C8E9C492238BD770002D438C /* libReact-RCTNetwork.a */,
+				C8E9C494238BD770002D438C /* libReact-RCTSettings.a */,
+				C8E9C496238BD770002D438C /* libReact-RCTText.a */,
+				C8E9C498238BD770002D438C /* libReact-RCTVibration.a */,
+				C8E9C49A238BD770002D438C /* libReactCommon.a */,
+				C8E9C49C238BD770002D438C /* libReactNativeNavigation.a */,
+				C8E9C49E238BD770002D438C /* libRNDateTimePicker.a */,
+				C8E9C4A0238BD770002D438C /* libRNGestureHandler.a */,
+				C8E9C4A2238BD770002D438C /* libRNVectorIcons.a */,
+				C8E9C4A4238BD770002D438C /* libYoga.a */,
+				C8C8E490238BC86D0096D414 /* libDoubleConversion.a */,
+				C8C8E492238BC86D0096D414 /* libFBReactNativeSpec.a */,
+				C8C8E494238BC86D0096D414 /* libFolly.a */,
+				C8C8E496238BC86D0096D414 /* libglog.a */,
+				C8C8E49C238BC86D0096D414 /* libPods-CCoach.a */,
+				C8C8E4A0238BC86D0096D414 /* libRCTTypeSafety.a */,
+				C8C8E4A2238BC86D0096D414 /* libReact-Core.a */,
+				C8C8E4A4238BC86D0096D414 /* libReact-CoreModules.a */,
+				C8C8E4A6238BC86D0096D414 /* libReact-cxxreact.a */,
+				C8C8E4A8238BC86D0096D414 /* libReact-jsi.a */,
+				C8C8E4AA238BC86D0096D414 /* libReact-jsiexecutor.a */,
+				C8C8E4AC238BC86D0096D414 /* libReact-jsinspector.a */,
+				C8C8E4AE238BC86D0096D414 /* libReact-RCTActionSheet.a */,
+				C8C8E4B0238BC86D0096D414 /* libReact-RCTAnimation.a */,
+				C8C8E4B2238BC86D0096D414 /* libReact-RCTBlob.a */,
+				C8C8E4B4238BC86D0096D414 /* libReact-RCTImage.a */,
+				C8C8E4B6238BC86D0096D414 /* libReact-RCTLinking.a */,
+				C8C8E4B8238BC86D0096D414 /* libReact-RCTNetwork.a */,
+				C8C8E4BA238BC86D0096D414 /* libReact-RCTSettings.a */,
+				C8C8E4BC238BC86D0096D414 /* libReact-RCTText.a */,
+				C8C8E4BE238BC86D0096D414 /* libReact-RCTVibration.a */,
+				C8C8E4C0238BC86D0096D414 /* libReactCommon.a */,
+				C8C8E4C2238BC86D0096D414 /* libYoga.a */,
+				C8C8E450238BAD940096D414 /* libDoubleConversion.a */,
+				C8C8E452238BAD940096D414 /* libFBReactNativeSpec.a */,
+				C8C8E454238BAD940096D414 /* libFolly.a */,
+				C8C8E456238BAD940096D414 /* libglog.a */,
+				C8C8E45E238BAD940096D414 /* libRCTTypeSafety.a */,
+				C8C8E460238BAD940096D414 /* libReact-Core.a */,
+				C8C8E462238BAD940096D414 /* libReact-CoreModules.a */,
+				C8C8E464238BAD940096D414 /* libReact-cxxreact.a */,
+				C8C8E466238BAD940096D414 /* libReact-jsi.a */,
+				C8C8E468238BAD940096D414 /* libReact-jsiexecutor.a */,
+				C8C8E46A238BAD940096D414 /* libReact-jsinspector.a */,
+				C8C8E46C238BAD940096D414 /* libreact-native-date-picker.a */,
+				C8C8E46E238BAD940096D414 /* libreact-native-image-picker.a */,
+				C8C8E470238BAD940096D414 /* libreact-native-sqlite-storage.a */,
+				C8C8E472238BAD940096D414 /* libReact-RCTActionSheet.a */,
+				C8C8E474238BAD940096D414 /* libReact-RCTAnimation.a */,
+				C8C8E476238BAD940096D414 /* libReact-RCTBlob.a */,
+				C8C8E478238BAD940096D414 /* libReact-RCTImage.a */,
+				C8C8E47A238BAD940096D414 /* libReact-RCTLinking.a */,
+				C8C8E47C238BAD940096D414 /* libReact-RCTNetwork.a */,
+				C8C8E47E238BAD940096D414 /* libReact-RCTSettings.a */,
+				C8C8E480238BAD940096D414 /* libReact-RCTText.a */,
+				C8C8E482238BAD940096D414 /* libReact-RCTVibration.a */,
+				C8C8E484238BAD940096D414 /* libReactCommon.a */,
+				C8C8E486238BAD940096D414 /* libReactNativeNavigation.a */,
+				C8C8E488238BAD940096D414 /* libRNDateTimePicker.a */,
+				C8C8E48A238BAD940096D414 /* libRNGestureHandler.a */,
+				C8C8E48C238BAD940096D414 /* libRNVectorIcons.a */,
+				C8C8E48E238BAD940096D414 /* libYoga.a */,
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
+				525E5D9C769AD1BD560B1205 /* libPods-CCoach.a */,
+				E7FA4BD33C3D4B81245A5F90 /* libPods-CCoach-tvOS.a */,
+				6A78605146F3EB05554C453D /* libPods-CCoach-tvOSTests.a */,
+				55400ADD460A3DDB935436BB /* libPods-CCoachTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				BAA8940A44F845A88BF24375 /* RNLocalNotifications.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* CCoach */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* CCoachTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				036E8B5D7CA940148D4A1767 /* Resources */,
+				29141ECE7730CA352FFB907C /* Pods */,
+				C8C8E44F238BACBD0096D414 /* Recovered References */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* CCoach.app */,
+				00E356EE1AD99517003FC87E /* CCoachTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* CCoach-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* CCoach-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8C8E44F238BACBD0096D414 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				81E7EAB6F49A4FF3B666F7A3 /* libRNLocalNotifications.a */,
+				C8C8E49E238BC86D0096D414 /* libPods-CCoachTests.a */,
+				C8C8E498238BC86D0096D414 /* libPods-CCoach-tvOS.a */,
+				C8C8E49A238BC86D0096D414 /* libPods-CCoach-tvOSTests.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* CCoachTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CCoachTests" */;
+			buildPhases = (
+				82554E32ED3A3805D76624F6 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = CCoachTests;
+			productName = CCoachTests;
+			productReference = 00E356EE1AD99517003FC87E /* CCoachTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* CCoach */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CCoach" */;
+			buildPhases = (
+				B781CD13DF1D9B2476FC6EA3 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				38C01B29BE3059FE59A2AC1D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CCoach;
+			productName = CCoach;
+			productReference = 13B07F961A680F5B00A75B9A /* CCoach.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D02E47A1E0B4A5D006451C7 /* CCoach-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "CCoach-tvOS" */;
+			buildPhases = (
+				F5E142E12ED8CC5383F7A26E /* [CP] Check Pods Manifest.lock */,
+				FD10A7F122414F3F0027D42C /* Start Packager */,
+				2D02E4771E0B4A5D006451C7 /* Sources */,
+				2D02E4781E0B4A5D006451C7 /* Frameworks */,
+				2D02E4791E0B4A5D006451C7 /* Resources */,
+				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CCoach-tvOS";
+			productName = "CCoach-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* CCoach-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D02E48F1E0B4A5D006451C7 /* CCoach-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "CCoach-tvOSTests" */;
+			buildPhases = (
+				F81C9AE2B60E2255B77EB759 /* [CP] Check Pods Manifest.lock */,
+				2D02E48C1E0B4A5D006451C7 /* Sources */,
+				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
+				2D02E48E1E0B4A5D006451C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
+			);
+			name = "CCoach-tvOSTests";
+			productName = "CCoach-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* CCoach-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				KnownAssetTags = (
+					New,
+				);
+				LastUpgradeCheck = 940;
+				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = A2KKFX6SRA;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = A2KKFX6SRA;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
+					};
+					2D02E47A1E0B4A5D006451C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					2D02E48F1E0B4A5D006451C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "CCoach" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* CCoach */,
+				00E356ED1AD99517003FC87E /* CCoachTests */,
+				2D02E47A1E0B4A5D006451C7 /* CCoach-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* CCoach-tvOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				C86399DF239E51BF0006DCC8 /* Oswald-Bold.ttf in Resources */,
+				C86399DD239E51BF0006DCC8 /* Oswald-Regular.ttf in Resources */,
+				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				C86399DE239E51BF0006DCC8 /* Oswald-Light.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4791E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		38C01B29BE3059FE59A2AC1D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CCoach/Pods-CCoach-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CCoach/Pods-CCoach-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82554E32ED3A3805D76624F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCoachTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B781CD13DF1D9B2476FC6EA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCoach-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5E142E12ED8CC5383F7A26E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCoach-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F81C9AE2B60E2255B77EB759 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCoach-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F122414F3F0027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* CCoachTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4771E0B4A5D006451C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
+				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48C1E0B4A5D006451C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCD954D1E0B4F2C00145EB5 /* CCoachTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* CCoach */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D02E47A1E0B4A5D006451C7 /* CCoach-tvOS */;
+			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13B07FB21A68108700A75B9A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = CCoach;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF857FA6074EECF4328D99B8 /* Pods-CCoachTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A2KKFX6SRA;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CCoachTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCoach.app/CCoach";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D50AD45964CED3E3640C4CC /* Pods-CCoachTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = A2KKFX6SRA;
+				INFOPLIST_FILE = CCoachTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCoach.app/CCoach";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A8C9B6F79BE4C30A7E1FDE0 /* Pods-CCoach.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = A2KKFX6SRA;
+				INFOPLIST_FILE = CCoach/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.ccoach;
+				PRODUCT_NAME = CCoach;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 593A768F212F435A0EA26D5D /* Pods-CCoach.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2KKFX6SRA;
+				INFOPLIST_FILE = CCoach/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.ccoach;
+				PRODUCT_NAME = CCoach;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		2D02E4971E0B4A5E006451C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E73CBB3AF2C90816E491941B /* Pods-CCoach-tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "CCoach-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.CCoach-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		2D02E4981E0B4A5E006451C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDBCFC8EDB4F8B71A92167C1 /* Pods-CCoach-tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "CCoach-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.CCoach-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		2D02E4991E0B4A5E006451C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FE2D2408B8D9271318F0958 /* Pods-CCoach-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "CCoach-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.CCoach-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCoach-tvOS.app/CCoach-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		2D02E49A1E0B4A5E006451C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E73B5F1F8D955636C7695FCF /* Pods-CCoach-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "CCoach-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.CCoach-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCoach-tvOS.app/CCoach-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CCoachTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CCoach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "CCoach-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D02E4971E0B4A5E006451C7 /* Debug */,
+				2D02E4981E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "CCoach-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D02E4991E0B4A5E006451C7 /* Debug */,
+				2D02E49A1E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "CCoach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
