@@ -176,8 +176,9 @@ export class CreateTaskDialog extends PureComponent {
               paddingTop: PixelToDP(20),
               flexDirection: 'column',
               alignItem: 'center',
-              height: '70%',
+              height: '75%',
               backgroundColor: '#30B3AB',
+              zIndex:333
 
             }}>
             <TextInput
@@ -364,10 +365,12 @@ export class CreateTaskDialog extends PureComponent {
               // bottom: 0,
               justifyContent: 'flex-end',
               height: '20%',
+  
               // marginTop:heightPercentageToDP(90),
               width: widthPercentageToDP(100),
               alignSelf: 'center',
-              backgroundColor: '#30B3AB'
+              backgroundColor: '#30B3AB',
+              marginTop:-35
             }}>
             {/* <Button
               style={{
@@ -413,7 +416,7 @@ export class CreateTaskDialog extends PureComponent {
                 elevation: 6,
                 paddingTop: 10,
                 paddingBottom: 10,
-                borderRadius: 25
+                borderRadius: 20,
               }}
               onPress={async () => {
                 const value = await AsyncStorage.getItem('reminder');

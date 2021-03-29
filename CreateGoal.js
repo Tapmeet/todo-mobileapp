@@ -833,7 +833,7 @@ export class CreateGoal extends PureComponent {
               elevation: 4,
               position: 'absolute',
               height: heightPercentageToDP(9),
-              top: heightPercentageToDP(78),
+              top: heightPercentageToDP(77),
             }}>
             <TouchableOpacity
               style={{

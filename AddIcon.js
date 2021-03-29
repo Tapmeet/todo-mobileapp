@@ -254,7 +254,10 @@ export class AddIcon extends PureComponent {
           }}
           source={require('./Images/gradient.png')}
           resizeMode={'stretch'}>
-          <SafeAreaView style={styles.titlebar}>
+          <SafeAreaView style={[styles.titlebar, {
+              borderBottomWidth:4,
+              borderBottomColor:"#FFF"
+            }]}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Home')}
               style={styles.backTouch}>
@@ -314,7 +317,7 @@ export class AddIcon extends PureComponent {
               borderColor: "#3a9f9a",
               width: widthPercentageToDP(85),
               alignSelf: 'center',
-              paddingTop: PixelToDP(35),
+              paddingTop: PixelToDP(25),
               flexDirection: 'column',
               alignItem: 'center',
               paddingBottom: 50,
@@ -334,7 +337,7 @@ export class AddIcon extends PureComponent {
                 alignSelf: 'center',
                 height: PixelToDP(10),
                 alignItems: 'center',
-                marginTop: PixelToDP(20),
+                marginTop: PixelToDP(10),
               }}>
               <Text style={styles.settingText2}>
                 Select one that best represents your value!
