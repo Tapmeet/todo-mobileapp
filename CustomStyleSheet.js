@@ -76,9 +76,10 @@ export const styles = StyleSheet.create({
   },
   settingText: {
     color: 'white',
-    fontSize: responsiveFontSize(2),
+    fontSize: responsiveFontSize(2.5),
     lineHeight: PixelToDP(30),
     textAlignVertical: 'center',
+    textTransform: "capitalize"
   },
   settingText2: {
     fontSize: responsiveFontSize(2.5),
@@ -217,31 +218,106 @@ export const styles = StyleSheet.create({
     borderColor: "#fff"
   },
   taskStatusView: {
-    height: '92%',
-    width: widthPercentageToDP(28),
+    backgroundColor: "#4bc9c1",
+    width: widthPercentageToDP(26),
     borderRadius: PixelToDP(10),
+    borderColor: '#30B3AB',
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: PixelToDP(3),
+    justifyContent: "space-between",
+    padding: PixelToDP(5),
+    marginLeft: 6,
+    paddingTop: 10,
+    paddingBottom: 10,
+    shadowColor: '#121010',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 3.84,
+    elevation: 10,
+    borderWidth: PixelToDP(2),
+
   },
   taskStatusText: {
     alignSelf: 'center',
-    fontSize: PixelToDP(12),
-    marginTop: PixelToDP(5),
+    fontSize: PixelToDP(16),
     textAlign: 'center',
-    fontFamily: "Oswald-Regular"
+    fontFamily: "Oswald-Regular",
+    color:"#fff",
+   
+
   },
+  
   taskStatusViewActive: {
-    height: '93%',
-    width: widthPercentageToDP(28),
+    width: widthPercentageToDP(26),
     borderRadius: PixelToDP(10),
     borderColor: '#30B3AB',
     borderWidth: PixelToDP(2),
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: PixelToDP(3),
-    paddingTop: PixelToDP(10),
+    justifyContent: "space-between",
+    padding: PixelToDP(5),
+    marginLeft: 6,
+    paddingTop: 10,
+    paddingBottom: 10,
+    shadowColor: '#121010',
+    backgroundColor:"#35928d",
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 3.84,
+    elevation: 10,
+    
   },
+  taskStatusViewActive2: {
+    width: widthPercentageToDP(26),
+    borderRadius: PixelToDP(10),
+    borderColor: '#30B3AB',
+    borderWidth: PixelToDP(2),
+    alignItems: 'center',
+    justifyContent: "space-between",
+    padding: PixelToDP(5),
+    marginLeft: 6,
+    paddingTop: 10,
+    paddingBottom: 10,
+    shadowColor: '#121010',
+    backgroundColor:"#35928d",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 3.84,
+    elevation: 5,
+    height: 70,
+    paddingBottom:15
+  },
+  taskStatusView2: {
+    paddingBottom:15,
+    backgroundColor: "#4bc9c1",
+    width: widthPercentageToDP(26),
+    borderRadius: PixelToDP(10),
+    borderColor: '#30B3AB',
+    alignItems: 'center',
+    justifyContent: "space-between",
+    padding: PixelToDP(5),
+    marginLeft: 6,
+    paddingTop: 10,
+    paddingBottom: 10,
+    shadowColor: '#121010',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 3.84,
+    elevation: 5,
+    borderWidth: PixelToDP(2),
+    height: 70,
+  },
+ 
   AddIcon: {
     height: PixelToDP(53),
     width: PixelToDP(53),
@@ -261,7 +337,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 6.84,
     elevation: 6,
-    backgroundColor:"white"
+    backgroundColor: "white"
   },
   AddIconActive: {
     height: PixelToDP(53),

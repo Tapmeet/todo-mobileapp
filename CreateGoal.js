@@ -211,7 +211,7 @@ export class CreateGoal extends PureComponent {
             ).image,
             Priority: Priority.find(
               pri => pri.Id == t.refPriority && pri.isActive == 1,
-            ).color,
+            ).image,
           });
         }
       });
@@ -414,8 +414,8 @@ export class CreateGoal extends PureComponent {
           ) : (
             <SafeAreaView style={[styles.titlebar, {
               height: PixelToDP(98),
-              borderBottomWidth:4,
-              borderBottomColor:"#FFF"
+              borderBottomWidth: 4,
+              borderBottomColor: "#FFF"
               // backgroundColor:'red'
               // height:responsiveFontSize(12),
               // height:'auto',
@@ -474,12 +474,12 @@ export class CreateGoal extends PureComponent {
                     justifyContent: "flex-start",
                     marginLeft: PixelToDP(8),
                     marginTop: 0,
-                    flexWrap:"wrap",
-                    
+                    flexWrap: "wrap",
+
                   }}>
                   <Text style={[styles.OswaldFont, {
                     color: 'white',
-                    paddingLeft:10,
+                    paddingLeft: 10,
                     // fontSize: PixelToDP(15)
                     fontSize: responsiveFontSize(2.5)
                   }]}>
@@ -615,20 +615,19 @@ export class CreateGoal extends PureComponent {
               }}>
               <TouchableOpacity
                 style={{
-                  borderWidth: PixelToDP(5),
-                  alignSelf: 'center',
-                  borderColor: '#58c3be',
                   width: widthPercentageToDP(45),
                   height: 'auto',
                   marginTop: PixelToDP(40),
                   marginBottom: PixelToDP(20),
-                  
-                  padding: PixelToDP(5),                
+                  padding: PixelToDP(5),
+                  borderWidth: PixelToDP(5),
+                  alignSelf: 'center',
+                  borderColor: '#58c3be',
                   borderRadius: PixelToDP(15),
                   backgroundColor: 'white',
                   shadowColor: '#121010',
                   justifyContent: "center",
-                  alignItems:"center",
+                  alignItems: "center",
                   marginTop: 30,
                   shadowOffset: {
                     width: 0,
@@ -640,15 +639,15 @@ export class CreateGoal extends PureComponent {
                 }}
                 onPress={this.completeGoal.bind(this)}>
                 <Text style={{
-                 color: '#4bc9c1',
-                 fontSize: responsiveFontSize(2.3),
-                 textTransform: 'capitalize',
-                 fontFamily: 'Oswald-Regular',
-                 letterSpacing: 0.7,
-                 alignSelf:"center",
-                 textAlign:"center",
-                 width:widthPercentageToDP(100),
-                 paddingTop:25
+                  color: '#4bc9c1',
+                  fontSize: responsiveFontSize(2.3),
+                  textTransform: 'capitalize',
+                  fontFamily: 'Oswald-Regular',
+                  letterSpacing: 0.7,
+                  alignSelf: "center",
+                  textAlign: "center",
+                  width: widthPercentageToDP(100),
+                  paddingTop: 25
                 }}>Complete Goal</Text>
               </TouchableOpacity>
 
@@ -735,9 +734,20 @@ export class CreateGoal extends PureComponent {
                         flexDirection: 'row',
                         width: '100%',
                         height: PixelToDP(60),
-                        borderBottomColor: '(rgba(255, 255, 255, 0.29)',
-                        borderBottomWidth: PixelToDP(1),
                         alignItems: 'center',
+                        shadowOffset: {
+                          width: 0,
+                          height: 6,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+                        elevation: 6,
+                        marginBottom: 20,
+                        borderWidth: PixelToDP(5),
+                        alignSelf: 'center',
+                        borderColor: '#58c3be',
+                        borderRadius: PixelToDP(15),
+                        backgroundColor: "#fff"
                       },
                     ]} onLongPress={move}
                     onPressOut={moveEnd}
@@ -755,28 +765,37 @@ export class CreateGoal extends PureComponent {
                       style={{
                         // height: PixelToDP(45),
                         // width: PixelToDP(45),
-                        height: responsiveFontSize(5.5),
-                        width: responsiveFontSize(5.5)
+                        height: responsiveFontSize(5.0),
+                        marginLeft: 15,
+                        width: responsiveFontSize(5.0)
                       }}
                       source={{ uri: item.Progress }}
                     />
                     <Text
-                      style={[styles.settingText, styles.OswaldFont, { marginLeft: PixelToDP(10) }]}>
+                      style={[styles.settingText, styles.OswaldFont, { marginLeft: PixelToDP(20), textAlign: "center", fontWeight: "bold", color: "#4bc9c1" }]}>
                       {item.task}
                     </Text>
 
                     <View
                       style={{
-                        backgroundColor: item.Priority,
+                        // backgroundColor: item.Priority,
                         // backgroundColor:'red',
                         borderRadius: PixelToDP(20),
                         width: PixelToDP(20),
                         height: PixelToDP(20),
                         justifyContent: 'center',
                         position: 'absolute',
-                        right: 10,
+                        right: 25,
                       }}
                     >
+                      <Image
+                        resizeMode={'contain'}
+                        style={{
+                          height: responsiveFontSize(5.0),
+                          width: responsiveFontSize(5.0)
+                        }}
+                        source={{ uri: item.Priority }}
+                      />
                     </View>
                   </TouchableOpacity>
                 )}
