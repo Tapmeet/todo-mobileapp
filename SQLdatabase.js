@@ -135,6 +135,18 @@ export default class SQLdatabase {
                   //
                   db.transaction(tx => {
                     tx.executeSql(
+                      'CREATE TABLE IF NOT EXISTS Journals (Id INTEGER PRIMARY KEY AUTOINCREMENT, journalsTitle TEXT,journalsDescription TEXT,isActive INTEGER)',
+                    );
+                  })
+                    .then(() => {
+                      console.log('Journals Table created successfully');
+                    })
+                    .catch(error => {
+                      console.log(error);
+                    });
+                  //
+                  db.transaction(tx => {
+                    tx.executeSql(
                       'CREATE TABLE IF NOT EXISTS Task (Id INTEGER PRIMARY KEY AUTOINCREMENT,task TEXT,taskDescription TEXT , refGoal INTEGER ,' +
                         'refAddTo INTEGER,startDate TEXT,refTaskRepeat INTEGER,refTaskRepeatEnd INTEGER,' +
                         'endOnDate TEXT,refProgress INTEGER,refPriority INTEGER,orderIndex INTEGER,isCompleted INTEGER,isActive INTEGER)',
@@ -1674,6 +1686,99 @@ export default class SQLdatabase {
               }
               console.log(taskIcon);
               resolve(taskIcon);
+            });
+          })
+            .then(result => {
+              this.closeDatabase(db);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    });
+  }
+  insertInToJournals(data) {
+    console.log('this.insertInToJournals() is executed ');
+    return new Promise(resolve => {
+      this.initDB()
+        .then(db => {
+          db.transaction(tx => {
+            tx.executeSql('INSERT INTO Journals VALUES (?, ?,?,?,?)', [
+              data.Id,
+              data.journalsTitle,
+              data.journalsDescription,
+              1,
+            ]).then(([tx, results]) => {
+              resolve(results);
+            });
+          })
+            .then(result => {
+              console.log('Jouranl insert Query completed');
+              this.closeDatabase(db);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    });
+  }
+  updateJournals(id, data) {
+    console.log('this.updateJournals() is executed ');
+    return new Promise(resolve => {
+      this.initDB()
+        .then(db => {
+          db.transaction(tx => {
+            tx.executeSql(
+              'UPDATE Journals SET journalsTitle = ?,journalsDescription =?, isActive = ? WHERE Id = ?',
+              [data.journalsTitle, data.journalsDescription, data.isActive, id],
+            ).then(([tx, results]) => {
+              resolve(results);
+            });
+          })
+            .then(result => {
+              this.closeDatabase(db);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    });
+  }
+  getJournals() {
+    console.log('this.getJournals() is executed ');
+    return new Promise(resolve => {
+      const reminder = [];
+      this.initDB()
+        .then(db => {
+          db.transaction(tx => {
+            tx.executeSql(
+              'SELECT r.Id,r.journalsTitle,r.journalsDescription,r.isActive FROM Journals r',
+              [],
+            ).then(([tx, results]) => {
+              console.log('Query completed');
+              var len = results.rows.length;
+              for (let i = 0; i < len; i++) {
+                let row = results.rows.item(i);
+                console.log(`ID: ${row.Id}, journalsTitle: ${row.journalsTitle}`);
+                const { Id, journalsTitle, journalsDescription, isActive } = row;
+                reminder.push({
+                  Id,
+                  journalsTitle,
+                  journalsDescription,
+                  isActive,
+                });
+              }
+              console.log(reminder);
+              resolve(reminder);
             });
           })
             .then(result => {
