@@ -16,19 +16,23 @@ import { styles } from "./CustomStyleSheet";
 import { heightPercentageToDP, PixelToDP, responsiveFontSize, widthPercentageToDP } from './PixelRatio';
 const db = new SQLdatabase();
 //await AsyncStorage.setItem('isLogin', 'true');
-export class JournalScreen extends PureComponent {
+export class EditJournalScreen extends PureComponent {
+    constructor(props) {
+        super(props);
+        console.log('heresss')
+        console.log(props.navigation.state.params.data)
+        this.state = {
+            Id: props.navigation.state.params.data.Id,
+            journalsTitle: props.navigation.state.params.data.journalsTitle,
+            journalsDescription: props.navigation.state.params.data.journalsDescription,
+
+        };
+    }
     static navigationOptions = {
         header: null,
     };
-    state = {
-        journalsTitle: '',
-        journalsDescription: '',
 
-    };
-    constructor(props) {
-        super(props);
-        this.saveTask.bind(this)
-    }
+
     handleTitle = text => {
 
         this.setState({ journalsTitle: text });
@@ -36,47 +40,60 @@ export class JournalScreen extends PureComponent {
     handleDescription = text => {
         this.setState({ journalsDescription: text });
     };
-    saveTask = () => {
-        // console.log(this.state.journalsTitle)
-        db.getJournals().then(result => {
-            let len = result.length;
-            let data = {
-                Id: len + 1,
-                journalsTitle: this.state.journalsTitle,
-                journalsDescription: this.state.journalsDescription,
-            };
-            if (this.state.journalsTitle == '' && this.state.journalsDescription == '') {
-                Alert.alert(
-                    'Alert',
-                    'All Fields are neccessary.',
-                    [
-                        {
-                            text: 'Ok',
-                            onPress: () => console.log('Cancel Pressed'),
-                            style: 'cancel',
-                        },
+    componentDidMount() {
+        // console.log('here');
+        // this.getJournal();
+    }
+    updateTask = () => {
+        console.log(this.state.journalsTitle)
+        let data = {
+            journalsTitle: this.state.journalsTitle,
+            journalsDescription: this.state.journalsDescription,
+            isActive: 1
+        };
+        if (this.state.journalsTitle == '' && this.state.journalsDescription == '') {
+            Alert.alert(
+                'Alert',
+                'All Fields are neccessary.',
+                [
+                    {
+                        text: 'Ok',
+                        onPress: () => console.log('Cancel Pressed'),
+                        style: 'cancel',
+                    },
 
-                    ],
-                    { cancelable: false },
-                );
-                return false
-            }
-            db.insertInToJournals(data)
-                .then(result => {
-                    console.log('data saved:' + result);
-                    this.props.navigation.navigate('JournalListingsScreen', {
-                        resultId: result.Id,
-                    });
-                })
-                .catch(err => {
-                    console.log(err);
+                ],
+                { cancelable: false },
+            );
+            return false
+        }
+        db.updateJournals(this.state.Id, data)
+            .then(result => {
+                console.log('data saveded:' + result);
+                this.props.navigation.navigate('JournalListingsScreen', {
+                    resultId: result.Id,
                 });
+            })
+            .catch(err => {
+                console.log(err);
+            });
 
-        });
+
 
         console.log('data will be save');
         //db.insertInToTasks(data)
 
+    }
+    deleteJournal = () => {
+        db.deleteJournals(this.state.Id)
+            .then(result => {
+                this.props.navigation.navigate('JournalListingsScreen', {
+                    deleteId: result.Id,
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
     render() {
         return (
@@ -148,7 +165,7 @@ export class JournalScreen extends PureComponent {
                             alignItem: 'center',
                             height: '100%',
                             backgroundColor: '#30B3AB',
-                            zIndex: 333
+
 
                         }}>
                         <TextInput
@@ -204,7 +221,7 @@ export class JournalScreen extends PureComponent {
                                     textAlignVertical: 'center',
                                     color: '#4bc9c1',
                                     alignSelf: "center"
-                                }}>Describe Your Journal!</Text>
+                                }}> Your Journal!</Text>
                             <View style={{
                                 borderWidth: 6,
                                 borderTopLeftRadius: PixelToDP(40),
@@ -258,7 +275,7 @@ export class JournalScreen extends PureComponent {
                                 height: PixelToDP(40),
                                 alignItems: 'center',
                                 marginBottom: PixelToDP(10),
-                                marginTop: PixelToDP(50),
+                                marginTop: PixelToDP(20),
                                 borderColor: '#58c3be', textAlign: 'center', borderWidth: PixelToDP(1),
                                 shadowColor: '#121010',
                                 backgroundColor: "#fff",
@@ -277,7 +294,7 @@ export class JournalScreen extends PureComponent {
                                 paddingBottom: 10,
                                 borderRadius: 20,
                             }}
-                            onPress={this.saveTask}
+                            onPress={this.updateTask}
                         >
                             <Text
                                 style={{
@@ -289,9 +306,125 @@ export class JournalScreen extends PureComponent {
                                     textAlignVertical: 'center',
                                     fontWeight: "bold"
                                 }}>
-                                Submit
+                                Update
                             </Text>
                         </Button>
+                    </View>
+                    <View
+                        style={{
+                            width: widthPercentageToDP(40),
+                            borderRadius: widthPercentageToDP(40),
+                            backgroundColor: '#8fc6c2',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            flexDirection: 'row',
+                            width: '90%',
+                            marginTop: 50,
+                            margin: 'auto',
+                            alignSelf: 'center',
+                            shadowColor: '#3ca29b',
+                            shadowOffset: {
+                                width: 0,
+                                height: 5,
+                            },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 5.46,
+                            elevation: 4,
+                            position: 'absolute',
+                            height: heightPercentageToDP(9),
+                            top: heightPercentageToDP(77),
+                        }}>
+                        <TouchableOpacity
+                            style={{
+                                height: 'auto',
+                                alignItems: 'center',
+                            }}
+                            onPress={() => this.props.navigation.navigate('JournalListingsScreen')}>
+                            <Image
+                                style={{
+                                    alignSelf: 'center',
+                                    height: heightPercentageToDP(9),
+                                    width: heightPercentageToDP(9),
+                                }}
+                                resizeMode={'contain'}
+                                source={require('./Images/back-icon.png')}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={{
+                                height: 'auto',
+                                alignItems: 'center',
+                            }}
+                            onPress={() => this.props.navigation.navigate('JournalScreen')}
+                        >
+                            <Image
+                                style={{
+                                    alignSelf: 'center',
+                                    height: heightPercentageToDP(10.5),
+                                    width: heightPercentageToDP(10.5),
+                                }}
+                                resizeMode={'contain'}
+                                source={require('./Images/plus.png')}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={{
+                                height: 'auto',
+                                alignItems: 'center',
+                            }}
+                            onPress={this.deleteJournal}>
+                            <Image
+                                style={{
+                                    alignSelf: 'center',
+                                    height: heightPercentageToDP(9),
+                                    width: heightPercentageToDP(9),
+                                }}
+                                resizeMode={'contain'}
+                                source={require('./Images/trash.png')}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                    <View
+                        style={{
+                            width: widthPercentageToDP(40),
+                            borderRadius: widthPercentageToDP(40),
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            flexDirection: 'row',
+                            width: '90%',
+                            margin: 'auto',
+                            alignSelf: 'center',
+                            position: 'absolute',
+                            top: heightPercentageToDP(95),
+                        }}>
+                        <Text style={{
+                            color: "white",
+                            fontSize: responsiveFontSize(2.2),
+                            textTransform: 'capitalize',
+                            fontFamily: 'Oswald-Regular',
+                            letterSpacing: 0.7,
+                        }}>
+                            Back
+                </Text>
+                        <Text style={{
+                            color: "white",
+                            fontSize: responsiveFontSize(2.2),
+                            textTransform: 'capitalize',
+                            fontFamily: 'Oswald-Regular',
+                            letterSpacing: 0.7,
+                            top: 5
+                        }}>
+                            New Journal
+                </Text>
+                        <Text style={{
+                            color: "white",
+                            fontSize: responsiveFontSize(2.2),
+                            textTransform: 'capitalize',
+                            fontFamily: 'Oswald-Regular',
+                            letterSpacing: 0.7,
+                        }}>
+                            Delete
+                </Text>
                     </View>
                 </ImageBackground>
             </View>

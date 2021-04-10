@@ -1706,7 +1706,7 @@ export default class SQLdatabase {
       this.initDB()
         .then(db => {
           db.transaction(tx => {
-            tx.executeSql('INSERT INTO Journals VALUES (?, ?,?,?,?)', [
+            tx.executeSql('INSERT INTO Journals VALUES (?,?,?,?)', [
               data.Id,
               data.journalsTitle,
               data.journalsDescription,
@@ -1716,7 +1716,7 @@ export default class SQLdatabase {
             });
           })
             .then(result => {
-              console.log('Jouranl insert Query completed');
+              console.log('Journal insert Query completed');
               this.closeDatabase(db);
             })
             .catch(err => {
@@ -1780,6 +1780,30 @@ export default class SQLdatabase {
               console.log(reminder);
               resolve(reminder);
             });
+          })
+            .then(result => {
+              this.closeDatabase(db);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    });
+  }
+ deleteJournals(id) {
+    console.log('this.deleteJournals() is executed', id);
+    return new Promise(resolve => {
+      this.initDB()
+        .then(db => {
+          db.transaction(tx => {
+            tx.executeSql('delete from Journals where Id = ? ', [id]).then(
+              ([tx, results]) => {
+                resolve(results);
+              },
+            );
           })
             .then(result => {
               this.closeDatabase(db);

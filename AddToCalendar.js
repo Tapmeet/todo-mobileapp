@@ -574,7 +574,7 @@ export class AddToCalendar extends PureComponent {
             }}
             source={require('./Images/gradient.png')}
             resizeMode={'stretch'} pointerEvents={this.state.isProcess ? 'none' : 'auto'}>
-            <SafeAreaView style={styles.titlebar}>
+            <SafeAreaView style={[styles.titlebar,{paddingBottom:25, borderBottomColor:"#fff", borderBottomWidth:4}]}>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate((this.props.navigation.getParam('FromCalenderOrGoal')== 'calender')?'calender':'CreateTaskDialog')}
                 style={styles.backTouch}>

@@ -23,6 +23,8 @@ import { SplashScreen } from './SplashScreen';
 import { EnterCode } from './EnterCode';
 import { AsyncStorage } from 'react-native';
 import { JournalScreen } from './JournalScreen';
+import { JournalListingsScreen } from './JournalListingsScreen';
+import { EditJournalScreen } from './EditJournalScreen';
 let isLogin;
 const AppNavigator = createStackNavigator(
   {
@@ -47,7 +49,9 @@ const AppNavigator = createStackNavigator(
     SplashScreen,
     AboutFour,
     EnterCode,
-    JournalScreen
+    JournalScreen,
+    JournalListingsScreen,
+    EditJournalScreen
   },
   {
     initialRouteName: 'SplashScreen',

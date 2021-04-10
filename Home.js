@@ -538,7 +538,7 @@ export class Home extends PureComponent {
                   height: 'auto',
                   alignItems: 'center',
                 }}
-                onPress={() =>this.props.navigation.navigate('JournalScreen')}>
+                onPress={() =>this.props.navigation.navigate('JournalListingsScreen')}>
                 <Image
                   style={{
                     alignSelf: 'center',

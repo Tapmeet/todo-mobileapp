@@ -154,7 +154,7 @@ export class CreateTaskDialog extends PureComponent {
           }]}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('CreateGoal')}
-              style={[styles.backTouch, { paddingBottom: 10 }]}>
+              style={[styles.backTouch, { paddingBottom: 25 }]}>
               <Image
                 style={styles.backImageIcon}
                 resizeMode={'stretch'}
@@ -164,10 +164,10 @@ export class CreateTaskDialog extends PureComponent {
                 // fontSize: PixelToDP(16)
                 fontSize: responsiveFontSize(2.4)
               }]}>
-                Back
+                 Back
             </Text>
             </TouchableOpacity>
-            <Text style={[styles.titleText, { paddingBottom: 10 }]}>Create Goal</Text>
+            <Text style={[styles.titleText, { paddingBottom: 25 }]}>Create Goal</Text>
           </SafeAreaView>
           <View
             style={{

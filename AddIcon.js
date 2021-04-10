@@ -256,11 +256,12 @@ export class AddIcon extends PureComponent {
           resizeMode={'stretch'}>
           <SafeAreaView style={[styles.titlebar, {
               borderBottomWidth:4,
-              borderBottomColor:"#FFF"
+              borderBottomColor:"#FFF",
+              paddingBottom: 15
             }]}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Home')}
-              style={styles.backTouch}>
+              style={[styles.backTouch, { paddingBottom:15}]}>
               <Image
                 style={styles.backImageIcon}
                 resizeMode={'stretch'}
@@ -286,7 +287,7 @@ export class AddIcon extends PureComponent {
                 fontSize: responsiveFontSize(3.5),
                 color: "white",
                 fontWeight: "bold",
-                paddingBottom: 10
+                paddingBottom: 15
 
               }}>Pick an Icon</Text>
             </View>
@@ -295,7 +296,7 @@ export class AddIcon extends PureComponent {
               style={{
                 alignItems: "flex-end",
                 justifyContent: "flex-end",
-                paddingBottom: 10,
+                paddingBottom: 5,
                 width: widthPercentageToDP(25),
                 paddingLeft: 30
               }}>

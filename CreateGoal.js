@@ -424,7 +424,7 @@ export class CreateGoal extends PureComponent {
             }]}>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Home')}
-                style={[styles.backTouch, { width: widthPercentageToDP(10) }]}>
+                style={[styles.backTouch, { width: widthPercentageToDP(10), paddingBottom:25 }]}>
                 <Image
                   style={styles.backImageIcon}
                   resizeMode={'stretch'}

@@ -1,29 +1,29 @@
 //https://github.com/wix/react-native-calendars
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import {
-    View,
-    Image,
-    TouchableOpacity,
-    SafeAreaView,
-    FlatList,
-    ImageBackground,
-    ScrollView,
-    Alert, ActivityIndicator, KeyboardAvoidingView, Modal,
+  View,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+  FlatList,
+  ImageBackground,
+  ScrollView,
+  Alert, ActivityIndicator, KeyboardAvoidingView, Modal,
 } from 'react-native';
 import * as _ from 'lodash';
-import {Text, Button, Icon, Toast} from 'native-base';
-import {CalendarList, Calendar} from 'react-native-calendars';
-import {styles} from './CustomStyleSheet';
+import { Text, Button, Icon, Toast } from 'native-base';
+import { CalendarList, Calendar } from 'react-native-calendars';
+import { styles } from './CustomStyleSheet';
 import NotifService from './NotifService';
 import {
-    heightPercentageToDP,
-    PixelToDP, responsiveFontSize,
-    widthPercentageToDP,
+  heightPercentageToDP,
+  PixelToDP, responsiveFontSize,
+  widthPercentageToDP,
 } from './PixelRatio';
-import {AddTaskDialog} from './AddTaskDialog';
+import { AddTaskDialog } from './AddTaskDialog';
 import SQLdatabase from './SQLdatabase';
-import {Progress,Priority} from './InsertInToDatabase';
-import {CancelNotificationOfCompleteTask,setNotificationOfInCompleteTask} from './setNotification';
+import { Progress, Priority } from './InsertInToDatabase';
+import { CancelNotificationOfCompleteTask, setNotificationOfInCompleteTask } from './setNotification';
 
 const db = new SQLdatabase();
 var task,
@@ -46,37 +46,37 @@ export class calender extends PureComponent {
       task: '',
       Tasks: [],
       MonthTasks: [],
-      TaskToday:[],
+      TaskToday: [],
       currentDate: '',
       currentMonth: '',
       TaskInMonth: [],
-      tasksDate:[],
+      tasksDate: [],
       marked: null,
       selected: '',
       taskDescription: '',
       AddTaskVisible: false,
       isTaskLoading: true
     };
-      this.notif = new NotifService(
-          this.onRegister.bind(this),
-          this.onNotif.bind(this),
-      );
+    this.notif = new NotifService(
+      this.onRegister.bind(this),
+      this.onNotif.bind(this),
+    );
     this.onDayPress = this.onDayPress.bind(this);
     this.getCurrentDate = this.getCurrentDate.bind(this);
     this.getTaskInMonth = this.getTaskInMonth.bind(this);
   }
-    onRegister(token) {
-        console.log('Registered !', JSON.stringify(token));
-        console.log(token);
-        this.setState({registerToken: token.token, gcmRegistered: true});
-    }
-    onNotif(notif) {
-        console.log(notif);
-        console.log(notif.title, notif.message);
-    }
-    handlePerm(perms) {
-        console.log('Permissions', JSON.stringify(perms));
-    }
+  onRegister(token) {
+    console.log('Registered !', JSON.stringify(token));
+    console.log(token);
+    this.setState({ registerToken: token.token, gcmRegistered: true });
+  }
+  onNotif(notif) {
+    console.log(notif);
+    console.log(notif.title, notif.message);
+  }
+  handlePerm(perms) {
+    console.log('Permissions', JSON.stringify(perms));
+  }
   getCurrentDate = () => {
     let cDate;
     cDate = new Date();
@@ -94,19 +94,19 @@ export class calender extends PureComponent {
     });
     this.getTasks();
   };
-  componentDidMount(){
+  componentDidMount() {
     this._subscribe = this.props.navigation.addListener('didFocus', () => {
       this.getCurrentDate();
     });
   }
-  getUSADateFormate=()=>{
-      let uSADateString ='';
-      if(currentDate!= null && currentDate!= undefined) {
-          let uSADate = currentDate.split('-');
-          uSADateString = uSADate[1] + '/' + uSADate[2] + '/' + uSADate[0];
-          return uSADateString;
-      }
+  getUSADateFormate = () => {
+    let uSADateString = '';
+    if (currentDate != null && currentDate != undefined) {
+      let uSADate = currentDate.split('-');
+      uSADateString = uSADate[1] + '/' + uSADate[2] + '/' + uSADate[0];
       return uSADateString;
+    }
+    return uSADateString;
   }
   onDayPress(day) {
     this.setState({
@@ -118,21 +118,21 @@ export class calender extends PureComponent {
   }
   onMonthChange(month) {
     console.log('month : ', month);
-    let m = month.year + '-' +('0' + (month.month)).slice(-2) ;
+    let m = month.year + '-' + ('0' + (month.month)).slice(-2);
     console.log('m :', m);
     // currentMonth = m;
     this.getTaskInMonth(m);
   }
   getTaskOnDate = date => {
-      // this.setState({
-      //
-      // });
+    // this.setState({
+    //
+    // });
     let TaskToday = [];
-      console.log('getTaskOnDate method is executed',date);
-      console.log('getTaskOnDate taskOnMOnth',this.state.taskOnMonth);
+    console.log('getTaskOnDate method is executed', date);
+    console.log('getTaskOnDate taskOnMOnth', this.state.taskOnMonth);
     if (this.state.taskOnMonth != null) {
       for (let i = 0; i < this.state.taskOnMonth.length; i++) {
-          let d = this.state.taskOnMonth[i].date.slice(0,10)
+        let d = this.state.taskOnMonth[i].date.slice(0, 10)
         if (date == d) {
           let task = this.state.tasks.find(
             t => t.Id == this.state.taskOnMonth[i].refTask
@@ -140,7 +140,7 @@ export class calender extends PureComponent {
           if (TaskToday.find(o => o.Id == this.state.task.Id) == null) {
             TaskToday.push({
               Id: task.Id,
-              refTaskOnDate : this.state.taskOnMonth[i].Id,
+              refTaskOnDate: this.state.taskOnMonth[i].Id,
               task: task.task,
               taskDescription: task.taskDescription,
               refGoal: task.refGoal,
@@ -152,79 +152,82 @@ export class calender extends PureComponent {
               refProgress: task.refProgress,
               refPriority: task.refPriority,
               orderIndex: task.orderIndex,
-              notifyId : this.state.taskOnMonth[i].notifyId,
-              isTaskOnDateCompleted : this.state.taskOnMonth[i].isCompleted,
+              notifyId: this.state.taskOnMonth[i].notifyId,
+              isTaskOnDateCompleted: this.state.taskOnMonth[i].isCompleted,
               Progress: Progress.find(
                 pr => pr.Id == task.refProgress && pr.isActive == 1,
               ).image,
-              Priority:Priority.find(
+              Priority: Priority.find(
                 pri => pri.Id == task.refPriority && pri.isActive == 1,
               ).color,
               goalIcon: task.refGoal
                 ? this.state.taskIcon.find(
-                    ti =>
-                      ti.Id ==
-                        this.state.goals.find(g => g.Id == task.refGoal && g.isActive == 1).refTaskIcon && ti.isActive == 1,
-                  ).icon
+                  ti =>
+                    ti.Id ==
+                    this.state.goals.find(g => g.Id == task.refGoal && g.isActive == 1).refTaskIcon && ti.isActive == 1,
+                ).icon
                 : logo,
-                customImg: task.refGoal
-                    ? this.state.taskIcon.find(
-                        ti =>
-                            ti.Id ==
-                            this.state.goals.find(
-                                g => g.Id == task.refGoal && g.isActive == 1,
-                            ).refTaskIcon && ti.isActive == 1,
-                    ).customImage
-                    : 0,
+              customImg: task.refGoal
+                ? this.state.taskIcon.find(
+                  ti =>
+                    ti.Id ==
+                    this.state.goals.find(
+                      g => g.Id == task.refGoal && g.isActive == 1,
+                    ).refTaskIcon && ti.isActive == 1,
+                ).customImage
+                : 0,
               isActive: task.isActive,
             });
           }
         }
       }
-        const complete = {key: 'complete', color: 'green'};
-        // const incomplete = {key: 'incomplete', color: 'red'};
-        const obj = this.state.tasksDate.reduce(
-            (c, v) =>
-                Object.assign(c, {
-                    [v]: {
-                          dots:[complete]
-                        , selected: ([v]== date)? true: false
-                    },
-                }),
-            {},
-        );
-        console.log('obj :', obj);
+      const complete = { key: 'complete', color: 'green' };
+      // const incomplete = {key: 'incomplete', color: 'red'};
+      const obj = this.state.tasksDate.reduce(
+        (c, v) =>
+          Object.assign(c, {
+            [v]: {
+              dots: [complete]
+              , selected: ([v] == date) ? true : false
+            },
+          }),
+        {},
+      );
+      console.log('obj :', obj);
       this.setState({
-          TaskToday,
-          marked: obj,
-          isTaskLoading:false
-      }, ()=> {
+        TaskToday,
+        marked: obj,
+        isTaskLoading: false
+      }, () => {
 
-          this.setState({
-              marked:{...this.state.marked, [date]:
-                      {
-                          selected:  true }}
-          },()=> console.log("marked:",this.state.marked));
+        this.setState({
+          marked: {
+            ...this.state.marked, [date]:
+            {
+              selected: true
+            }
+          }
+        }, () => console.log("marked:", this.state.marked));
 
       })
     }
     console.log('today task :', TaskToday);
   };
   getTaskInMonth = month => {
-    console.log('getTaskInMonth method is executed',month);
+    console.log('getTaskInMonth method is executed', month);
     // const [taskOnDate,goals,priority,progress,tasks] = this.state
     let tasksDate = [];
-      this.setState({
-          marked : null,
-          // tasksDate:[]
-      });
+    this.setState({
+      marked: null,
+      // tasksDate:[]
+    });
     let date;
     if (
       this.state.taskOnDate != null &&
       this.state.tasks != null &&
       this.state.goals != null
     ) {
-        console.log("if condition is true",this.state.taskOnDate);
+      console.log("if condition is true", this.state.taskOnDate);
       let taskOnMonth = [];
       for (let i = 0; i < this.state.taskOnDate.length; i++) {
         if (this.state.taskOnDate[i].date != null) {
@@ -234,21 +237,20 @@ export class calender extends PureComponent {
             let task = this.state.tasks.find(
               t => (t.Id == this.state.taskOnDate[i].refTask) && (t.isActive == 1)
             );
-              if(task != null)
-              {
-                  // console.log(task.refGoal +","+ this.state.goals.find(g => g.Id == task.refGoal).isActive)
-                  if (
-                      (task.refGoal &&
-                          this.state.goals.find(g => g.Id == task.refGoal).isActive ==
-                          1) ||
-                      (task.refGoal == null)
-                  ) {
-                      taskOnMonth.push(this.state.taskOnDate[i]);
-                      console.log('taskOnMonth :', taskOnMonth);
-                      tasksDate.push(this.state.taskOnDate[i].date.slice(0, 10));
-                      console.log('tasksDate :', tasksDate);
-                  }
+            if (task != null) {
+              // console.log(task.refGoal +","+ this.state.goals.find(g => g.Id == task.refGoal).isActive)
+              if (
+                (task.refGoal &&
+                  this.state.goals.find(g => g.Id == task.refGoal).isActive ==
+                  1) ||
+                (task.refGoal == null)
+              ) {
+                taskOnMonth.push(this.state.taskOnDate[i]);
+                console.log('taskOnMonth :', taskOnMonth);
+                tasksDate.push(this.state.taskOnDate[i].date.slice(0, 10));
+                console.log('tasksDate :', tasksDate);
               }
+            }
           }
         }
       }
@@ -260,14 +262,14 @@ export class calender extends PureComponent {
       } else {
         date = month + '-01';
       }
-        this.setState({
-            tasksDate,
-            taskOnMonth,
-            isTaskLoading : true
-        },()=> {
-            console.log("this.state.tasksDate :",this.state.tasksDate);
-            this.getTaskOnDate(date);
-        });
+      this.setState({
+        tasksDate,
+        taskOnMonth,
+        isTaskLoading: true
+      }, () => {
+        console.log("this.state.tasksDate :", this.state.tasksDate);
+        this.getTaskOnDate(date);
+      });
     } else {
       console.log('list should not be null');
     }
@@ -276,65 +278,65 @@ export class calender extends PureComponent {
     console.log('To Do getTasks method is executed');
     let TaskToday = [];
     db.getTask().then(tasks => {
-          db.getGoals().then(goals => {
-            db.getTaskIcon().then(taskIcon => {
-              db.getTaskOnDate().then(taskOnDateResult => {
-                 // let taskOnDate = taskOnDateResult;
-                // console.log(taskOnDate);
-                let taskOnDate = _.filter(taskOnDateResult, {isActive: 1});
-                this.setState({
-                  taskOnDate,
-                  tasks,
-                  goals,
-                  taskIcon,
-                });
-                this.getTaskInMonth(currentMonth);
-              });
+      db.getGoals().then(goals => {
+        db.getTaskIcon().then(taskIcon => {
+          db.getTaskOnDate().then(taskOnDateResult => {
+            // let taskOnDate = taskOnDateResult;
+            // console.log(taskOnDate);
+            let taskOnDate = _.filter(taskOnDateResult, { isActive: 1 });
+            this.setState({
+              taskOnDate,
+              tasks,
+              goals,
+              taskIcon,
             });
+            this.getTaskInMonth(currentMonth);
           });
+        });
+      });
     });
   };
   updateTask = (selectedTask, isActive, isCompleted) => {
-      let taskOnMonth =[];
-      console.log("selected Task:",selectedTask);
-    let tod = this.state.taskOnDate.find(t=>t.Id == selectedTask.refTaskOnDate);
+    let taskOnMonth = [];
+    console.log("selected Task:", selectedTask);
+    let tod = this.state.taskOnDate.find(t => t.Id == selectedTask.refTaskOnDate);
     tod.isCompleted = isCompleted;
     tod.completedDate = currentDate;
     tod.isActive = isActive;
-    if(isActive == 0)
-     tod.isNotificationCancel = 1;
-    db.updateTaskOnDate(tod.Id,tod).then((results)=>{
-        console.log("TaskOnDate update successfully");
-        if(isActive == 0){
-            this.notif.checkPermission(this.handlePerm.bind(this));
-            this.notif.configure(
-                this.onRegister.bind(this),
-                this.onNotif.bind(this),
-            );
-            this.notif.cancelNotif(tod.notifyId);
+    if (isActive == 0)
+      tod.isNotificationCancel = 1;
+    db.updateTaskOnDate(tod.Id, tod).then((results) => {
+      console.log("TaskOnDate update successfully");
+      if (isActive == 0) {
+        this.notif.checkPermission(this.handlePerm.bind(this));
+        this.notif.configure(
+          this.onRegister.bind(this),
+          this.onNotif.bind(this),
+        );
+        this.notif.cancelNotif(tod.notifyId);
+      }
+      else if (isCompleted == 1)
+        CancelNotificationOfCompleteTask(tod, this.notif);
+      else if (isCompleted == 0)
+        setNotificationOfInCompleteTask(tod, selectedTask.task, this.notif);
+      let TMonth = [];
+      TMonth = this.state.taskOnMonth;
+      for (let i = 0; i < TMonth.length; i++) {
+        if (TMonth[i].Id == selectedTask.refTaskOnDate) {
+          if (isActive == 0)
+            continue;
+          TMonth[i].isCompleted = isCompleted
         }
-        else if(isCompleted == 1)
-            CancelNotificationOfCompleteTask(tod,this.notif);
-        else if(isCompleted == 0)
-            setNotificationOfInCompleteTask(tod,selectedTask.task,this.notif);
-       let TMonth =[];
-       TMonth = this.state.taskOnMonth;
-        for(let i=0;i<TMonth.length;i++){
-            if(TMonth[i].Id == selectedTask.refTaskOnDate){
-                    if(isActive == 0)
-                        continue;
-                TMonth[i].isCompleted = isCompleted
-            }
-            taskOnMonth.push(TMonth[i]);
-        }
-        console.log("TaskToday :",taskOnMonth)
-        this.setState({
-            // marked:obj,
-            taskOnMonth
-        },()=> {
-            console.log("TaskToday2 :",this.state.taskOnMonth);
-            this.getTaskOnDate(currentDate);
-        })
+        taskOnMonth.push(TMonth[i]);
+      }
+      console.log("TaskToday :", taskOnMonth)
+      this.setState({
+        // marked:obj,
+        taskOnMonth
+      }, () => {
+        console.log("TaskToday2 :", this.state.taskOnMonth);
+        this.getTaskOnDate(currentDate);
+      })
     })
   };
   render() {
@@ -347,7 +349,11 @@ export class calender extends PureComponent {
           }}
           source={require('./Images/gradient.png')}
           resizeMode={'stretch'}>
-          <SafeAreaView style={styles.titlebar}>
+          <SafeAreaView style={[styles.titlebar, {
+            borderBottomWidth: 4,
+            borderBottomColor: "#FFF",
+            paddingBottom: 25
+          }]}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Home')}
               style={styles.backTouch}>
@@ -358,7 +364,7 @@ export class calender extends PureComponent {
               />
               <Text style={styles.backLogo}>CC</Text>
             </TouchableOpacity>
-            <Text style={[styles.titleText,{textTransform: 'uppercase'}]}>Calendar</Text>
+            <Text style={[styles.titleText, { textTransform: 'uppercase' }]}>Calendar</Text>
             <View style={styles.titleRightView} />
           </SafeAreaView>
           <ScrollView>
@@ -402,7 +408,7 @@ export class calender extends PureComponent {
                     current={this.state.currentDate}
                     // onVisibleMonthsChange={months => this.onMonthChange(months)}
                     // pagingEnabled
-                    style={{borderBottomWidth: 1, borderBottomColor: ' black'}}
+                    style={{ borderBottomWidth: 1, borderBottomColor: ' black' }}
                   />
                 </Calendar>
               </View>
@@ -416,199 +422,198 @@ export class calender extends PureComponent {
                     marginTop: PixelToDP(10),
                   },
                 ]}>
-                Tasks - {(currentDate!= '')? this.getUSADateFormate(): ''}
+                Tasks - {(currentDate != '') ? this.getUSADateFormate() : ''}
               </Text>
-                {this.state.isTaskLoading ? (
-                    <View
-                        style={{
-                            // position: 'absolute',
-                            // left: 0,
-                            // right: 0,
-                            // top: 0,
-                            // bottom: 0,
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            zIndex: 1,
-                        }}>
-                        <ActivityIndicator size="large" color="black" />
-                    </View>
-                ) : (
-              <View
-                style={{
-                  width: widthPercentageToDP(80),
-                  alignSelf: 'center',
-                  height: 'auto',
-                }}>
-                <FlatList
-                  data={this.state.TaskToday}
-                  keyExtractor={(item, index) => index.toString()}
-                  renderItem={({item}) => (
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        width: '100%',
-                        height: PixelToDP(65),
-                        alignItems:'center',
-                        // backgroundColor:'black',
-                        // justifyContent:'center',
-                        borderBottomColor: 'white',
-                        alignSelf:'center',
-                        borderBottomWidth: PixelToDP(1),
-                      }}
-                       >
-                      <View style={styles.taskImageBorderGreen}>
-                        <Image
-                          resizeMode={'contain'}
-                          style={[item.customImg== 1 ? styles.customImage:styles.nonCustomTODoImage ,{
-                          }]}
-                          source={{uri: item.goalIcon}}
-                        />
-                      </View>
-                      <Text
-                        style={[
-                          styles.settingText,
-                          {marginLeft: PixelToDP(10)},
-                        ]}>
-                        {item.task}
-                      </Text>
+              {this.state.isTaskLoading ? (
+                <View
+                  style={{
+                    // position: 'absolute',
+                    // left: 0,
+                    // right: 0,
+                    // top: 0,
+                    // bottom: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 1,
+                  }}>
+                  <ActivityIndicator size="large" color="black" />
+                </View>
+              ) : (
+                <View
+                  style={{
+                    width: widthPercentageToDP(80),
+                    alignSelf: 'center',
+                    height: 'auto',
+                  }}>
+                  <FlatList
+                    data={this.state.TaskToday}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => (
                       <View
                         style={{
-                          position: 'absolute',
-                          right: 0,
-                          marginTop: PixelToDP(10),
                           flexDirection: 'row',
-                          justifyContent: 'space-between',
-                          width: widthPercentageToDP(30),
-                        }}>
-                        <TouchableOpacity
-                          style={{
-                            backgroundColor: '#30B3AB',
-                            borderRadius: PixelToDP(30),
-                            // width: PixelToDP(35),
-                            // height: PixelToDP(35),
-                              width:responsiveFontSize(4),
-                              height:responsiveFontSize(4),
-                            justifyContent: 'center',
-                          }}
-                          onPress={() => {
-                            selectedTask = item;
-                            this.setState({
-                              AddTaskVisible: !this.state.AddTaskVisible,
-                            });
-                            console.log('selected Task :', selectedTask);
-                          }}>
-                          <Icon
-                            name="edit"
-                            type="Feather"
-                            style={{
-                              // fontSize: PixelToDP(16),
-                                fontSize:responsiveFontSize(2),
-                              color: 'white',
-                              alignSelf: 'center',
-                            }}
+                          width: '100%',
+                          height: PixelToDP(65),
+                          alignItems: 'center',
+                          // backgroundColor:'black',
+                          // justifyContent:'center',
+                          borderBottomColor: 'white',
+                          alignSelf: 'center',
+                          borderBottomWidth: PixelToDP(1),
+                        }}
+                      >
+                        <View style={styles.taskImageBorderGreen}>
+                          <Image
+                            resizeMode={'contain'}
+                            style={[item.customImg == 1 ? styles.customImage : styles.nonCustomTODoImage, {
+                            }]}
+                            source={{ uri: item.goalIcon }}
                           />
-                        </TouchableOpacity>
-                        <TouchableOpacity
+                        </View>
+                        <Text
+                          style={[
+                            styles.settingText,
+                            { marginLeft: PixelToDP(10) },
+                          ]}>
+                          {item.task}
+                        </Text>
+                        <View
                           style={{
-                            backgroundColor: '#325859',
-                            borderRadius: PixelToDP(30),
-                            // width: PixelToDP(35),
-                            // height: PixelToDP(35),
-                              width:responsiveFontSize(4),
-                              height:responsiveFontSize(4),
-                            justifyContent: 'center',
-                          }}
-                          onPress={() => {
-                            Alert.alert(
-                              'Alert',
-                              'Are you sure you want to delete this task ?',
-                              [
-                                {
-                                  text: 'Cancel',
-                                  onPress: () => console.log('Cancel Pressed'),
-                                  style: 'cancel',
-                                },
-                                {
-                                  text: 'OK',
-                                  onPress: () =>
-                                  {
-                                      this.updateTask(item, 0, item.isTaskOnDateCompleted)
-                                  },
-                                },
-                              ],
-                              {cancelable: false},
-                            );
+                            position: 'absolute',
+                            right: 0,
+                            marginTop: PixelToDP(10),
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            width: widthPercentageToDP(30),
                           }}>
-                          <Icon
-                            name="trash-2"
-                            type="Feather"
+                          <TouchableOpacity
                             style={{
-                                fontSize:responsiveFontSize(2),
-                              color: 'white',
-                              alignSelf: 'center',
+                              backgroundColor: '#30B3AB',
+                              borderRadius: PixelToDP(30),
+                              // width: PixelToDP(35),
+                              // height: PixelToDP(35),
+                              width: responsiveFontSize(4),
+                              height: responsiveFontSize(4),
+                              justifyContent: 'center',
                             }}
-                          />
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                          style={
-                            item.isTaskOnDateCompleted == 1
-                              ? styles.taskCompleted
-                              : styles.taskInCompleted
-                          } onPress={() => {
-                            if (!item.isTaskOnDateCompleted) {
-                                Alert.alert(
-                                    'Alert',
-                                    'Are you sure you want to complete this task ?',
-                                    [
-                                        {
-                                            text: 'Cancel',
-                                            onPress: () => console.log('Cancel Pressed'),
-                                            style: 'cancel',
-                                        },
-                                        {
-                                            text: 'OK',
-                                            onPress: () => this.updateTask(item, 1, 1),
-                                        },
-                                    ],
-                                    {cancelable: false},
-                                );
-                            } else {
-                                Alert.alert(
-                                    'Alert',
-                                    'Are you sure you want to incomplete this task ?',
-                                    [
-                                        {
-                                            text: 'Cancel',
-                                            onPress: () => console.log('Cancel Pressed'),
-                                            style: 'cancel',
-                                        },
-                                        {
-                                            text: 'OK',
-                                            onPress: () => this.updateTask(item, 1, 0),
-                                        },
-                                    ],
-                                    {cancelable: false},
-                                );
-                            }
-                        }}>
-                          {item.isTaskOnDateCompleted == 1 && (
+                            onPress={() => {
+                              selectedTask = item;
+                              this.setState({
+                                AddTaskVisible: !this.state.AddTaskVisible,
+                              });
+                              console.log('selected Task :', selectedTask);
+                            }}>
                             <Icon
-                              name="check"
+                              name="edit"
                               type="Feather"
                               style={{
+                                // fontSize: PixelToDP(16),
+                                fontSize: responsiveFontSize(2),
                                 color: 'white',
                                 alignSelf: 'center',
-                                fontSize: PixelToDP(16),
                               }}
                             />
-                          )}
-                        </TouchableOpacity>
+                          </TouchableOpacity>
+                          <TouchableOpacity
+                            style={{
+                              backgroundColor: '#325859',
+                              borderRadius: PixelToDP(30),
+                              // width: PixelToDP(35),
+                              // height: PixelToDP(35),
+                              width: responsiveFontSize(4),
+                              height: responsiveFontSize(4),
+                              justifyContent: 'center',
+                            }}
+                            onPress={() => {
+                              Alert.alert(
+                                'Alert',
+                                'Are you sure you want to delete this task ?',
+                                [
+                                  {
+                                    text: 'Cancel',
+                                    onPress: () => console.log('Cancel Pressed'),
+                                    style: 'cancel',
+                                  },
+                                  {
+                                    text: 'OK',
+                                    onPress: () => {
+                                      this.updateTask(item, 0, item.isTaskOnDateCompleted)
+                                    },
+                                  },
+                                ],
+                                { cancelable: false },
+                              );
+                            }}>
+                            <Icon
+                              name="trash-2"
+                              type="Feather"
+                              style={{
+                                fontSize: responsiveFontSize(2),
+                                color: 'white',
+                                alignSelf: 'center',
+                              }}
+                            />
+                          </TouchableOpacity>
+                          <TouchableOpacity
+                            style={
+                              item.isTaskOnDateCompleted == 1
+                                ? styles.taskCompleted
+                                : styles.taskInCompleted
+                            } onPress={() => {
+                              if (!item.isTaskOnDateCompleted) {
+                                Alert.alert(
+                                  'Alert',
+                                  'Are you sure you want to complete this task ?',
+                                  [
+                                    {
+                                      text: 'Cancel',
+                                      onPress: () => console.log('Cancel Pressed'),
+                                      style: 'cancel',
+                                    },
+                                    {
+                                      text: 'OK',
+                                      onPress: () => this.updateTask(item, 1, 1),
+                                    },
+                                  ],
+                                  { cancelable: false },
+                                );
+                              } else {
+                                Alert.alert(
+                                  'Alert',
+                                  'Are you sure you want to incomplete this task ?',
+                                  [
+                                    {
+                                      text: 'Cancel',
+                                      onPress: () => console.log('Cancel Pressed'),
+                                      style: 'cancel',
+                                    },
+                                    {
+                                      text: 'OK',
+                                      onPress: () => this.updateTask(item, 1, 0),
+                                    },
+                                  ],
+                                  { cancelable: false },
+                                );
+                              }
+                            }}>
+                            {item.isTaskOnDateCompleted == 1 && (
+                              <Icon
+                                name="check"
+                                type="Feather"
+                                style={{
+                                  color: 'white',
+                                  alignSelf: 'center',
+                                  fontSize: PixelToDP(16),
+                                }}
+                              />
+                            )}
+                          </TouchableOpacity>
+                        </View>
                       </View>
-                    </View>
-                  )}
-                />
-              </View>
                     )}
+                  />
+                </View>
+              )}
             </View>
           </ScrollView>
           <TouchableOpacity
@@ -619,14 +624,14 @@ export class calender extends PureComponent {
             }}
             onPress={() => {
               selectedTask = null;
-              this.setState({AddTaskVisible: !this.state.AddTaskVisible});
+              this.setState({ AddTaskVisible: !this.state.AddTaskVisible });
             }}>
             <Image
               style={{
                 // height: PixelToDP(55),
                 // width: PixelToDP(55),
-                  height:responsiveFontSize(7),
-                  width:responsiveFontSize(7)
+                height: responsiveFontSize(7),
+                width: responsiveFontSize(7)
               }}
               resizeMode={'contain'}
               source={require('./Images/add.png')}
@@ -641,41 +646,40 @@ export class calender extends PureComponent {
               this.setState({
                 AddTaskVisible: false,
               });
-              if((t!=undefined && tD!=undefined) && (t !='' && tD!=''))
-              {
-                  if (selectedTask == null) {
-                      db.getTask().then(result => {
-                          let len = result.length;
-                          let data = {
-                              Id: len + 1,
-                              task: t,
-                              taskDescription: tD,
-                              refGoal: null,
-                              refAddTo: 2,
-                              startDate: null,
-                              refTaskRepeat: null,
-                              refTaskRepeatEnd: null,
-                              endOnDate: null,
-                              refProgress: 1,
-                              refPriority: 1,
-                              orderIndex: len,
-                              isActive: 1,
-                          };
-                          this.props.navigation.navigate('AddToCalendar', {
-                              data: data,
-                              FromCalenderOrGoal: 'calender',
-                              isEdited: 'false',
-                          });
-                      });
-                  } else {
-                      selectedTask.task = t;
-                      selectedTask.taskDescription = tD;
-                      this.props.navigation.navigate('AddToCalendar', {
-                          data: selectedTask,
-                          FromCalenderOrGoal: 'calender',
-                          isEdited: 'true',
-                      });
-                  }
+              if ((t != undefined && tD != undefined) && (t != '' && tD != '')) {
+                if (selectedTask == null) {
+                  db.getTask().then(result => {
+                    let len = result.length;
+                    let data = {
+                      Id: len + 1,
+                      task: t,
+                      taskDescription: tD,
+                      refGoal: null,
+                      refAddTo: 2,
+                      startDate: null,
+                      refTaskRepeat: null,
+                      refTaskRepeatEnd: null,
+                      endOnDate: null,
+                      refProgress: 1,
+                      refPriority: 1,
+                      orderIndex: len,
+                      isActive: 1,
+                    };
+                    this.props.navigation.navigate('AddToCalendar', {
+                      data: data,
+                      FromCalenderOrGoal: 'calender',
+                      isEdited: 'false',
+                    });
+                  });
+                } else {
+                  selectedTask.task = t;
+                  selectedTask.taskDescription = tD;
+                  this.props.navigation.navigate('AddToCalendar', {
+                    data: selectedTask,
+                    FromCalenderOrGoal: 'calender',
+                    isEdited: 'true',
+                  });
+                }
               }
             }}
           />
