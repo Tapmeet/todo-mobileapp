@@ -28,8 +28,13 @@ export class AboutOne extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={styles.titlebar
-                    }>
+                   <SafeAreaView style={[styles.titlebar, {
+                        borderBottomColor: 'white',
+                        borderBottomWidth: 4,
+                        paddingBottom: 5,
+                        paddingTop: 5,
+                        marginBottom: 6,
+                    }]}>
                         <TouchableOpacity onPress={()=> this.props.navigation.navigate(this.props.navigation.getParam('comeFrom'))} style={styles.backTouch}>
                             <Image style={styles.backImageIcon} resizeMode={'stretch'} source={require('./Images/back.png')}/>
                             <Text style={styles.backLogo}>CC</Text>

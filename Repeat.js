@@ -77,8 +77,11 @@ export class Repeat extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={styles.titlebar
-                    }>
+                    <SafeAreaView style={[styles.titlebar, {
+                        borderBottomWidth: 4,
+                        borderBottomColor: "#FFF",
+                        paddingBottom: 25
+                    }]}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("AddToCalendar")}
                                           style={[styles.backTouch,{
                                               width: '35%',

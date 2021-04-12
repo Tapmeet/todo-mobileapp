@@ -269,12 +269,27 @@ export class ToDo extends PureComponent {
                         flexDirection: 'row',
                         width: '100%',
                         height: PixelToDP(55),
-                        borderBottomColor: '(rgba(255, 255, 255, 0.29)',
-                        borderBottomWidth: PixelToDP(1),
-                        alignItems: 'center'
+                        // borderBottomColor: '(rgba(255, 255, 255, 0.29)',
+                        // borderBottomWidth: PixelToDP(1),
+                        shadowColor: '#121010',
+                        backgroundColor: "#fff",
+                        borderColor: '#58c3be',
+                        textAlign: 'center',
+                        borderWidth: PixelToDP(3),
+                        alignItems: 'center',
+                        borderRadius: 20,
+                        shadowOffset: {
+                          width: 0,
+                          height: 6,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+                        paddingLeft: 5,
+                        marginTop: 15,
+                        marginBottom: 10
                       }}
                     >
-                      <View style={styles.taskImageBorderToDoWhite}>
+                      <View style={[styles.taskImageBorderToDoWhite, { backgroundColor: '#58c3be' }]}>
                         <Image
                           style={[item.customImg == 1 ? styles.customImage : styles.nonCustomTODoImage, {
                           }]}
@@ -283,13 +298,13 @@ export class ToDo extends PureComponent {
                         />
                       </View>
                       <Text
-                        style={[styles.settingText, { marginLeft: PixelToDP(10) }]}>
+                        style={[styles.settingText, { marginLeft: PixelToDP(10), color: '#4bc9c1' }]}>
                         {item.task}
                       </Text>
                       <View
                         style={{
                           position: 'absolute',
-                          right: 0,
+                          right: 10,
                           marginTop: PixelToDP(10),
                           flexDirection: 'row',
                           justifyContent: 'space-between',
@@ -372,8 +387,8 @@ export class ToDo extends PureComponent {
                             width: widthPercentageToDP(8),
                             height: widthPercentageToDP(8),
                             justifyContent: 'center',
-                            borderColor: 'white',
-                            borderWidth: PixelToDP(1),
+                            borderColor: '#4bc9c1',
+                            borderWidth: PixelToDP(2),
                           }} onPress={() => {
                             Alert.alert(
                               'Alert',

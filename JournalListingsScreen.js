@@ -119,32 +119,7 @@ export class JournalListingsScreen extends PureComponent {
                             zIndex: 333
 
                         }}>
-                        <Text
-                            style={[
-                                styles.addTaskTextInput,
-                                {
-                                    borderColor: '#58c3be', borderWidth: PixelToDP(1),
-                                    shadowColor: '#121010',
-                                    backgroundColor: "#fff",
-                                    fontSize: responsiveFontSize(2.3),
-                                    textAlign: 'center',
-                                    borderWidth: 4,
-                                    height: 55,
-                                    shadowOffset: {
-                                        width: 0,
-                                        height: 6,
-                                    },
-                                    shadowOpacity: 0.25,
-                                    shadowRadius: 3.84,
-                                    color: '#4bc9c1',
-                                    elevation: 6,
-                                    paddingTop: 15,
-                                    paddingBottom: 8
-                                },
-                            ]}
-                        >
-                            Your Journals List
-                            </Text>
+                       <Text style={styles.registerTitle}>Journals List!</Text>
                         {this.state.data.length > 0 ?
 
                             this.state.data.map((journals, index) => (

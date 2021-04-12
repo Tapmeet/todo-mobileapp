@@ -114,8 +114,11 @@ export class RepeatEnd extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={styles.titlebar
-                    }>
+                    <SafeAreaView style={[styles.titlebar, {
+                        borderBottomWidth: 4,
+                        borderBottomColor: "#FFF",
+                        paddingBottom: 25
+                    }]}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("AddToCalendar")} style={[styles.backTouch,{width:widthPercentageToDP(30)}]}>
                             <Image style={styles.backImageIcon} resizeMode={'stretch'} source={require('./Images/back.png')}/>
                             <Text style={[styles.backLogo,{fontSize:responsiveFontSize(2)}]}>Back</Text>

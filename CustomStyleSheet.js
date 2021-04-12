@@ -76,10 +76,14 @@ export const styles = StyleSheet.create({
   },
   settingText: {
     color: 'white',
-    fontSize: responsiveFontSize(2.5),
+    fontSize: responsiveFontSize(2.6),
     lineHeight: PixelToDP(30),
     textAlignVertical: 'center',
-    textTransform: "capitalize"
+    textTransform: "capitalize",
+    borderBottomColor: '#fff',
+    borderBottomWidth:1,
+    paddingBottom:10,
+    marginTop:10
   },
   settingText2: {
     fontSize: responsiveFontSize(2.5),
@@ -361,9 +365,9 @@ export const styles = StyleSheet.create({
     elevation: 6,
   },
   about: {
-    fontSize: responsiveFontSize(2),
+    fontSize: responsiveFontSize(2.6),
     color: 'white',
-    lineHeight: PixelToDP(18),
+    lineHeight: PixelToDP(30),
     marginTop: PixelToDP(20),
     width: widthPercentageToDP(90),
     alignSelf: 'center',
@@ -488,5 +492,49 @@ export const styles = StyleSheet.create({
     // elevation:PixelToDP(20),
     borderRadius: widthPercentageToDP(20),
     alignSelf: 'center',
+  },
+  loginTitle: {
+    fontSize: responsiveFontSize(3.6),
+    fontWeight:"bold",
+    color:"white",
+    marginTop:30,
+    marginBottom:30,
+    textAlign:"center"
+  },
+  loginText: {
+    fontSize: responsiveFontSize(2.8),
+    color:"white",
+    marginTop:10,
+    marginBottom:30,
+    textAlign:"center"
+  },
+  registerTitle: {
+    fontSize: responsiveFontSize(3.2),
+    fontWeight:"bold",
+    color:"white",
+    marginTop:0,
+    marginBottom:10,
+    textAlign:"center"
+  },
+  registerText: {
+    fontSize: responsiveFontSize(2.8),
+    color:"white",
+    marginTop:0,
+    marginBottom:20,
+    textAlign:"center"
+  },
+  loginSignup: {
+    textAlign: "center",
+    fontSize: responsiveFontSize(2.2),
+    color:"white",
+    marginTop:15,
+    paddingRight:10,
+    marginTop:40
+  },
+  loginSignupText: {
+    textAlign: "right",
+    fontSize: responsiveFontSize(2.2),
+    color:"white",
+    fontWeight:"bold"
   }
 });

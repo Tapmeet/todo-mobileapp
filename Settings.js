@@ -138,8 +138,13 @@ export class Settings extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={styles.titlebar
-                        }>
+                   <SafeAreaView style={[styles.titlebar, {
+                        borderBottomColor: 'white',
+                        borderBottomWidth: 4,
+                        paddingBottom: 5,
+                        paddingTop: 5, 
+                        marginBottom: 6,
+                    }]}>
                         <TouchableOpacity onPress={()=> this.props.navigation.navigate("Home")} style={styles.backTouch}>
                             <Image style={styles.backImageIcon} resizeMode={'stretch'} source={require('./Images/back.png')}/>
                             <Text style={styles.backLogo}>CC</Text>
@@ -213,7 +218,7 @@ export class Settings extends PureComponent {
                         }
                         <TouchableOpacity style={{
                             flexDirection:'row',
-                            marginTop:PixelToDP(10)
+                            marginTop:PixelToDP(0)
                         }} onPress={()=>this.props.navigation.navigate("AddReminder")}
                         >
                             <Icon
@@ -228,7 +233,7 @@ export class Settings extends PureComponent {
                                 }}
                             />
                              {/*<Icon.plus/>*/}
-                            <Text style={styles.settingText}>Add Reminder</Text>
+                            <Text style={[styles.settingText, {borderBottomWidth:0, marginTop:0}]}>Add Reminder</Text>
                         </TouchableOpacity>
                         {/*<Text style={styles.settingHeading}>CALENDAR EVENT REMINDER</Text>*/}
                         {/*<TouchableOpacity style={{*/}
@@ -256,11 +261,11 @@ export class Settings extends PureComponent {
                         {/*        />}*/}
                         {/*    </View>*/}
                         {/*</TouchableOpacity>*/}
-                        <Text style={styles.settingHeading}>General</Text>
+                        <Text style={[styles.settingHeading,{marginTop:20}]}>General</Text>
                         <TouchableOpacity style={{
                             // borderBottomColor:'(rgba(255, 255, 255, 0.29)',
                             // borderBottomWidth:1,
-                            height:PixelToDP(30)
+                           
                         }}>
                         <Text style={styles.settingText}>
                             Rate App
@@ -269,7 +274,7 @@ export class Settings extends PureComponent {
                         <TouchableOpacity style={{
                             // borderBottomColor:'(rgba(255, 255, 255, 0.29)',
                             // borderBottomWidth:1,
-                            height:PixelToDP(30)
+                            
                         }}>
                         <Text style={styles.settingText}>
                             Share App
@@ -278,12 +283,21 @@ export class Settings extends PureComponent {
                         <TouchableOpacity style={{
                             // borderBottomColor:'(rgba(255, 255, 255, 0.29)',
                             // borderBottomWidth:1,
-                            height:PixelToDP(30)
+                            
                         }} onPress={() => this.props.navigation.navigate('AboutOne',{
                             comeFrom: 'Settings',
                         })}>
                         <Text style={styles.settingText}>
                             About App
+                        </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                            // borderBottomColor:'(rgba(255, 255, 255, 0.29)',
+                            // borderBottomWidth:1,
+                            
+                        }} onPress={() => this.props.navigation.navigate('LoginScreen')}>
+                        <Text style={styles.settingText}>
+                            Login
                         </Text>
                         </TouchableOpacity>
                     </View>

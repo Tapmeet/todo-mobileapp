@@ -372,7 +372,23 @@ export class EditJournalScreen extends PureComponent {
                                 height: 'auto',
                                 alignItems: 'center',
                             }}
-                            onPress={this.deleteJournal}>
+                            onPress={() => {
+                                Alert.alert(
+                                    'Alert',
+                                    'Are you sure you want to delete this Journal ?',
+                                    [
+                                        {
+                                            text: 'Cancel',
+                                            onPress: () => console.log('Cancel Pressed'),
+                                            style: 'cancel',
+                                        },
+                                        { text: 'OK', onPress: () => this.deleteJournal() },
+                                    ],
+                                    { cancelable: false },
+                                );
+
+                            }}>
+
                             <Image
                                 style={{
                                     alignSelf: 'center',
