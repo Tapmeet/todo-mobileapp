@@ -112,11 +112,7 @@ export class Statistics extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={[styles.titlebar, {
-                        borderBottomWidth: 4,
-                        borderBottomColor: "#FFF",
-                        paddingBottom: 25
-                    }]}>
+                    <SafeAreaView style={styles.titlebar}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")} style={styles.backTouch}>
                             <Image style={styles.backImageIcon} resizeMode={'stretch'} source={require('./Images/back.png')} />
                             <Text style={styles.backLogo}>CC</Text>

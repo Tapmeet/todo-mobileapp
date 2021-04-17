@@ -105,17 +105,10 @@ export class StatusDialog extends PureComponent {
                 transparent={true}
             >
 
-                <Card style={{
-                    backgroundColor: 'white',
-                    borderRadius: PixelToDP(20),
-                    height: heightPercentageToDP(100),
-                    width: widthPercentageToDP(95),
-                    alignSelf: 'center',
-                    marginTop: heightPercentageToDP(0),
-                }}>
+                <Card style={[styles.modalBg, { paddingTop: 0 }]}>
 
                     <View
-                        style={{
+                        style={[styles.boxShadow, {
                             borderWidth: 6,
                             borderRadius: PixelToDP(20),
                             borderColor: "#4bcac2",
@@ -125,25 +118,9 @@ export class StatusDialog extends PureComponent {
                             flexDirection: 'column',
                             alignItem: 'center',
                             height: '100%',
-                            shadowColor: '#121010',
-                            shadowOffset: {
-                                width: 0,
-                                height: 10,
-                            },
-                            shadowOpacity: 0.8,
-                            shadowRadius: 3.84,
-                            elevation: 10,
                             backgroundColor: "#fff"
-                        }}>
+                        }]}>
                         <ScrollView>
-                            {/*<View style={{*/}
-                            {/*    width:widthPercentageToDP(90),*/}
-                            {/*    alignSelf:'center',*/}
-                            {/*    paddingTop:PixelToDP(20),*/}
-                            {/*    flexDirection:'column',*/}
-                            {/*    alignItem:'center',*/}
-                            {/*    height:'100%'*/}
-                            {/*}}>*/}
                             <View style={{
                                 flexDirection: 'row',
                                 width: widthPercentageToDP(80),
@@ -162,88 +139,8 @@ export class StatusDialog extends PureComponent {
                                     color: '#4bc9c1',
                                     alignSelf: "center"
                                 }}>{this.state.task}</Text>
-                                {/* <View style={{
-                                position:'absolute',
-                                right:0,
-                                flexDirection:'row',
-                                justifyContent:'space-between',
-                                width:'45%'
-                            }}>
-                            <TouchableOpacity style={{
-                                backgroundColor:'#30B3AB',
-                                borderRadius:PixelToDP(35),
-                                width:PixelToDP(35),
-                                height:PixelToDP(35),
-                                justifyContent:'center'
-                            }} onPress={()=>{
-                                  this.setState({
-                                      AddTaskVisible: true
-                                  })
-                            }}>
-                                <Icon
-                                    name="edit"
-                                    type="Feather"
-                                    style={{
-                                        fontSize: PixelToDP(15),
-                                        color: "white",
-                                        alignSelf:'center'
-                                    }}
-                                />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{
-                                backgroundColor:'#325859',
-                                borderRadius:PixelToDP(35),
-                                width:PixelToDP(35),
-                                height:PixelToDP(35),
-                                justifyContent:'center'
-                            }} onPress={()=>{
-                                Alert.alert(
-                                    'Alert',
-                                    'Are you sure you want to delete this task ?',
-                                    [
-                                        {
-                                            text: 'Cancel',
-                                            onPress: () => console.log('Cancel Pressed'),
-                                            style: 'cancel',
-                                        },
-                                        {text: 'OK', onPress: () => this.updateTask(this.state.progressId,this.state.priorityId,this.state.task,this.state.taskDescription,this.state.repeatNever,0)},
-                                    ],
-                                    {cancelable: false},
-                                );
-
-                            }}>
-                                <Icon
-                                    name="trash-2"
-                                    type="Feather"
-                                    style={{
-                                        fontSize: PixelToDP(15),
-                                        color: "white",
-                                        alignSelf:'center',
-                                    }}
-                                />
-                            </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor:'#30B3AB',
-                                    height:PixelToDP(35),
-                                    width:PixelToDP(35),
-                                    borderRadius:PixelToDP(35),
-                                    alignItems:'center',
-                                    justifyContent:'center',
-                                }} onPress={()=>{
-                                    this.updateTask(this.state.progressId,this.state.priorityId,this.state.task,this.state.taskDescription,this.state.repeatNever,1)
-                                }}>
-                                    <Icon
-                                        name="chevron-right"
-                                        type="Feather"
-                                        style={{
-                                            fontSize: PixelToDP(25),
-                                            color: "white",
-                                        }}
-                                    />
-                                </TouchableOpacity>
-                            </View> */}
                             </View>
-                            <View style={{
+                            <View style={[styles.boxShadow, {
                                 borderWidth: 6,
                                 borderTopLeftRadius: PixelToDP(40),
                                 borderBottomRightRadius: PixelToDP(40),
@@ -255,15 +152,7 @@ export class StatusDialog extends PureComponent {
                                 paddingtop: 25,
                                 paddingBottom: 35,
                                 justifyContent: "flex-start",
-                                shadowColor: '#121010',
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 10,
-                                },
-                                shadowOpacity: 0.8,
-                                shadowRadius: 3.84,
-                                elevation: 10,
-                            }}>
+                            }]}>
                                 <Text style={{
                                     width: widthPercentageToDP(80),
                                     alignSelf: 'center',
@@ -275,21 +164,7 @@ export class StatusDialog extends PureComponent {
                                     {this.state.taskDescription}
                                 </Text>
                             </View>
-                            {/*<Button style={{*/}
-                            {/*    backgroundColor:'#3BDE86',*/}
-                            {/*    width:widthPercentageToDP(80),*/}
-                            {/*    alignSelf:'center',*/}
-                            {/*    height:PixelToDP(30),*/}
 
-                            {/*}} onPress={()=> this.setState({repeatNever :!this.state.repeatNever})}>*/}
-                            {/*    <Text style={{*/}
-                            {/*        color:'white',*/}
-                            {/*        fontSize:PixelToDP(18),*/}
-                            {/*        textAlign: 'center',*/}
-                            {/*        textAlignVertical: 'center',*/}
-                            {/*        width:'100%',*/}
-                            {/*    }}> Repeat Never</Text>*/}
-                            {/*</Button>*/}
                             <Text style={{
                                 fontSize: responsiveFontSize(2.6),
                                 fontWeight: 'bold',
@@ -309,8 +184,9 @@ export class StatusDialog extends PureComponent {
                                 alignSelf: 'center',
                                 width: widthPercentageToDP(85),
                                 justifyContent: 'space-between',
-                                height: PixelToDP(100),
-                                marginTop: PixelToDP(15),
+                                height: PixelToDP(125),
+                                marginTop: PixelToDP(0),
+                                zIndex: 99999
 
                             }}>
                                 <FlatList
@@ -323,7 +199,8 @@ export class StatusDialog extends PureComponent {
                                                 width: PixelToDP(45),
                                                 height: PixelToDP(45),
                                                 marginBottom: 10,
-                                                alignSelf: "center"
+                                                alignSelf: "center",
+                                                zIndex: 99
                                             }} source={{ uri: item.image }} />
                                             <TouchableOpacity
                                                 style={(this.state.progressId == item.Id) ? styles.taskStatusViewActive : styles.taskStatusView}
@@ -349,7 +226,7 @@ export class StatusDialog extends PureComponent {
                                 textAlignVertical: 'center',
                                 color: '#4bc9c1',
                                 alignSelf: "center",
-                                marginTop: 25
+                                marginTop: 5
                             }}>
                                 How are you doing with this task?
                     </Text>
@@ -409,39 +286,21 @@ export class StatusDialog extends PureComponent {
 
                         </ScrollView>
                         <View
-                            style={{
-                                width: widthPercentageToDP(40),
-                                borderRadius: widthPercentageToDP(40),
+                            style={[styles.buttonsFooter,
+                            {
                                 backgroundColor: '#dddddd',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                flexDirection: 'row',
-                                width: '90%',
-                                marginTop: 50,
-                                margin: 'auto',
-                                alignSelf: 'center',
-                                shadowColor: '#3ca29b',
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 5,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 5.46,
-                                elevation: 4,
-                                position: 'absolute',
-                                height: heightPercentageToDP(9),
-                                top: heightPercentageToDP(77),
-                                zIndex: 99
-                            }}>
+                                top: heightPercentageToDP(76),
+
+                            }]}>
                             <TouchableOpacity
                                 style={{
                                     height: 'auto',
                                     alignItems: 'center',
                                 }}
-                                onPress={()=>{
-                                    this.updateTask(this.state.progressId,this.state.priorityId,this.state.task,this.state.taskDescription,this.state.repeatNever,1)
+                                onPress={() => {
+                                    this.updateTask(this.state.progressId, this.state.priorityId, this.state.task, this.state.taskDescription, this.state.repeatNever, 1)
                                 }}
-                                >
+                            >
                                 <Image
                                     style={{
                                         alignSelf: 'center',
@@ -457,11 +316,11 @@ export class StatusDialog extends PureComponent {
                                     height: 'auto',
                                     alignItems: 'center',
                                 }}
-                                onPress={()=>{
+                                onPress={() => {
                                     this.setState({
                                         AddTaskVisible: true
                                     })
-                              }}
+                                }}
                             >
                                 <Image
                                     style={{
@@ -478,7 +337,7 @@ export class StatusDialog extends PureComponent {
                                     height: 'auto',
                                     alignItems: 'center',
                                 }}
-                                onPress={()=>{
+                                onPress={() => {
                                     Alert.alert(
                                         'Alert',
                                         'Are you sure you want to delete this task ?',
@@ -488,11 +347,11 @@ export class StatusDialog extends PureComponent {
                                                 onPress: () => console.log('Cancel Pressed'),
                                                 style: 'cancel',
                                             },
-                                            {text: 'OK', onPress: () => this.updateTask(this.state.progressId,this.state.priorityId,this.state.task,this.state.taskDescription,this.state.repeatNever,0)},
+                                            { text: 'OK', onPress: () => this.updateTask(this.state.progressId, this.state.priorityId, this.state.task, this.state.taskDescription, this.state.repeatNever, 0) },
                                         ],
-                                        {cancelable: false},
+                                        { cancelable: false },
                                     );
-    
+
                                 }}>
                                 <Image
                                     style={{
@@ -506,41 +365,15 @@ export class StatusDialog extends PureComponent {
                             </TouchableOpacity>
                         </View>
                         <View
-                            style={{
-                                width: widthPercentageToDP(40),
-                                borderRadius: widthPercentageToDP(40),
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                flexDirection: 'row',
-                                width: '90%',
-                                margin: 'auto',
-                                alignSelf: 'center',
-                                position: 'absolute',
+                            style={[styles.buttonsFooterText, {
                                 top: heightPercentageToDP(93.5),
-                                zIndex: 99
-                            }}>
-                            <Text style={{
-                                  color: '#4bc9c1',
-                                fontSize: responsiveFontSize(2.2),
-                                textTransform: 'capitalize',
-                                fontFamily: 'Oswald-Regular',
-                                letterSpacing: 0.7,
-                            }}>Back </Text>
-                            <Text style={{
-                                  color: '#4bc9c1',
-                                fontSize: responsiveFontSize(2.2),
-                                textTransform: 'capitalize',
-                                fontFamily: 'Oswald-Regular',
-                                letterSpacing: 0.7,
-                                top: 5
-                            }}> Edit Goal</Text>
-                            <Text style={{
-                                  color: '#4bc9c1',
-                                fontSize: responsiveFontSize(2.2),
-                                textTransform: 'capitalize',
-                                fontFamily: 'Oswald-Regular',
-                                letterSpacing: 0.7,
-                            }}> Delete</Text>
+                            }]}>
+                            <Text style={[styles.buttonsFooterTextTitle, { color: '#4bc9c1', }]}>Back </Text>
+                            <Text style={[styles.buttonsFooterTextTitle, {
+                                top: 5,
+                                color: '#4bc9c1'
+                            }]}> Edit Goal</Text>
+                            <Text style={[styles.buttonsFooterTextTitle, { color: '#4bc9c1', }]}>Delete</Text>
                         </View>
                     </View>
                 </Card>

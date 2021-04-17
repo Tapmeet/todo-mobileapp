@@ -414,17 +414,10 @@ export class CreateGoal extends PureComponent {
           ) : (
             <SafeAreaView style={[styles.titlebar, {
               height: PixelToDP(98),
-              borderBottomWidth: 4,
-              borderBottomColor: "#FFF"
-              // backgroundColor:'red'
-              // height:responsiveFontSize(12),
-              // height:'auto',
-              // paddingTop:PixelToDP(5),
-              // paddingBottom:PixelToDP(5)
             }]}>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Home')}
-                style={[styles.backTouch, { width: widthPercentageToDP(10), paddingBottom:25 }]}>
+                style={[styles.backTouch, { width: widthPercentageToDP(10) }]}>
                 <Image
                   style={styles.backImageIcon}
                   resizeMode={'stretch'}
@@ -436,7 +429,7 @@ export class CreateGoal extends PureComponent {
                   flexDirection: 'row',
                   width: widthPercentageToDP(60),
                   // backgroundColor:'red'
-                  marginTop: -30
+                  marginTop: 0
                 }}>
 
                 <AnimatedCircularProgress
@@ -772,7 +765,7 @@ export class CreateGoal extends PureComponent {
                       source={{ uri: item.Progress }}
                     />
                     <Text
-                      style={[styles.settingText, styles.OswaldFont, { marginLeft: PixelToDP(20), textAlign: "center", fontWeight: "bold", color: "#4bc9c1" }]}>
+                      style={[styles.settingText, styles.OswaldFont, { marginLeft: PixelToDP(20), textAlign: "center", fontWeight: "bold", color: "#4bc9c1", borderBottomWidth: 0 }]}>
                       {item.task}
                     </Text>
 
@@ -802,58 +795,9 @@ export class CreateGoal extends PureComponent {
               />
             </ScrollView>
           )}
-          {/*</ScrollView>*/}
-          {/* <View
-            style={{
-              position: 'absolute',
-              bottom: PixelToDP(10),
-              alignSelf: 'center',
-            }}>
-            <TouchableOpacity
-              style={{
-                alignSelf: 'center',
-              }}
-              onPress={() =>
-                this.props.navigation.navigate('CreateTaskDialog', {
-                  GoalId: Goal.Id,
-                })
-              }>
-              <Image
-                style={{
-                  // height: PixelToDP(55),
-                  // width: PixelToDP(55),
-                  height: responsiveFontSize(7),
-                  width: responsiveFontSize(7)
-                }}
-                resizeMode={'contain'}
-                source={require('./Images/add.png')}
-              />
-            </TouchableOpacity>
-          </View> */}
-          <View
-            style={{
-              width: widthPercentageToDP(40),
-              borderRadius: widthPercentageToDP(40),
-              backgroundColor: '#8fc6c2',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              width: '90%',
-              marginTop: 50,
-              margin: 'auto',
-              alignSelf: 'center',
-              shadowColor: '#3ca29b',
-              shadowOffset: {
-                width: 0,
-                height: 5,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 5.46,
-              elevation: 4,
-              position: 'absolute',
-              height: heightPercentageToDP(9),
-              top: heightPercentageToDP(77),
-            }}>
+
+          <View style={styles.buttonsFooter}
+          >
             <TouchableOpacity
               style={{
                 height: 'auto',
@@ -925,44 +869,16 @@ export class CreateGoal extends PureComponent {
             </TouchableOpacity>
           </View>
           <View
-            style={{
-              width: widthPercentageToDP(40),
-              borderRadius: widthPercentageToDP(40),
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              width: '90%',
-              margin: 'auto',
-              alignSelf: 'center',
-              position: 'absolute',
-              top: heightPercentageToDP(95),
-            }}>
-            <Text style={{
-              color: "white",
-              fontSize: responsiveFontSize(2.2),
-              textTransform: 'capitalize',
-              fontFamily: 'Oswald-Regular',
-              letterSpacing: 0.7,
-            }}>
+            style={styles.buttonsFooterText}>
+            <Text style={styles.buttonsFooterTextTitle}>
               Archive
                 </Text>
-            <Text style={{
-              color: "white",
-              fontSize: responsiveFontSize(2.2),
-              textTransform: 'capitalize',
-              fontFamily: 'Oswald-Regular',
-              letterSpacing: 0.7,
+            <Text style={[styles.buttonsFooterTextTitle, {
               top: 5
-            }}>
+            }]}>
               New Goal
                 </Text>
-            <Text style={{
-              color: "white",
-              fontSize: responsiveFontSize(2.2),
-              textTransform: 'capitalize',
-              fontFamily: 'Oswald-Regular',
-              letterSpacing: 0.7,
-            }}>
+            <Text style={styles.buttonsFooterTextTitle}>
               Delete
                 </Text>
           </View>

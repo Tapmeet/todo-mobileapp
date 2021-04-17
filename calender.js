@@ -473,7 +473,7 @@ export class calender extends PureComponent {
                         <Text
                           style={[
                             styles.settingText,
-                            { marginLeft: PixelToDP(10) },
+                            { marginLeft: PixelToDP(10), borderBottomWidth:0 },
                           ]}>
                           {item.task}
                         </Text>

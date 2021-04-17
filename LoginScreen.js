@@ -89,13 +89,7 @@ export class LoginScreen extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={[styles.titlebar, {
-                        borderBottomColor: 'white',
-                        borderBottomWidth: 4,
-                        paddingBottom: 5,
-                        paddingTop: 5,
-                        marginBottom: 6,
-                    }]}>
+                    <SafeAreaView style={styles.titlebar}>
                         <TouchableOpacity
                             onPress={() => this.props.navigation.navigate('JournalListingsScreen')}
                             style={{
@@ -154,28 +148,7 @@ export class LoginScreen extends PureComponent {
                         <Text style={styles.loginTitle}>Welcome!</Text>
                         <Text style={[styles.loginText]}>Sign in to Continue</Text>
                         <TextInput
-                            style={[
-                                styles.addTaskTextInput,
-                                {
-                                    borderColor: '#58c3be', textAlign: 'left', borderWidth: PixelToDP(1),
-                                    shadowColor: '#121010',
-                                    backgroundColor: "#fff",
-                                    fontSize: responsiveFontSize(2.3),
-                                    borderWidth: 4,
-                                    height: 55,
-                                    shadowOffset: {
-                                        width: 0,
-                                        height: 6,
-                                    },
-                                    shadowOpacity: 0.25,
-                                    shadowRadius: 3.84,
-                                    color: '#4bc9c1',
-                                    elevation: 6,
-                                    paddingTop: 10,
-                                    paddingBottom: 10,
-                                    paddingLeft: 15
-                                },
-                            ]}
+                            style={styles.TextInputCommon}
                             onChangeText={this.handleTitle}
                             value={this.state.journalsTitle}
                             placeholder={'Email'}
@@ -183,28 +156,7 @@ export class LoginScreen extends PureComponent {
 
                         />
                         <TextInput
-                            style={[
-                                styles.addTaskTextInput,
-                                {
-                                    borderColor: '#58c3be', textAlign: 'left', borderWidth: PixelToDP(1),
-                                    shadowColor: '#121010',
-                                    backgroundColor: "#fff",
-                                    fontSize: responsiveFontSize(2.3),
-                                    borderWidth: 4,
-                                    height: 55,
-                                    shadowOffset: {
-                                        width: 0,
-                                        height: 6,
-                                    },
-                                    shadowOpacity: 0.25,
-                                    shadowRadius: 3.84,
-                                    color: '#4bc9c1',
-                                    elevation: 6,
-                                    paddingTop: 10,
-                                    paddingBottom: 10,
-                                    paddingLeft: 15
-                                },
-                            ]}
+                            style={styles.TextInputCommon}
                             onChangeText={this.handleTitle}
                             value={this.state.journalsTitle}
                             placeholder={'Password'}
@@ -212,31 +164,7 @@ export class LoginScreen extends PureComponent {
 
                         />
                         <Button
-                            style={{
-                                width: widthPercentageToDP(90),
-                                alignSelf: 'center',
-                                height: PixelToDP(40),
-                                alignItems: 'center',
-                                marginBottom: PixelToDP(10),
-                                marginTop: PixelToDP(30),
-                                borderColor: '#58c3be', textAlign: 'center', borderWidth: PixelToDP(1),
-                                shadowColor: '#121010',
-                                backgroundColor: "#fff",
-                                fontSize: responsiveFontSize(2.3),
-                                borderWidth: 4,
-                                height: 55,
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 6,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
-                                color: '#4bc9c1',
-                                elevation: 6,
-                                paddingTop: 10,
-                                paddingBottom: 10,
-                                borderRadius: 20,
-                            }}
+                            style={styles.buttonLogin}
                             onPress={this.saveTask}
                         >
                             <Text

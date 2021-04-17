@@ -112,11 +112,7 @@ export class AccomplishedTasks extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={[styles.titlebar, {
-                        borderBottomWidth: 4,
-                        borderBottomColor: "#FFF",
-                        paddingBottom: 25
-                    }]}>
+                    <SafeAreaView style={styles.titlebar}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("ToDo")}
                             style={[styles.backTouch, {
                                 width: '17%'
@@ -167,7 +163,7 @@ export class AccomplishedTasks extends PureComponent {
                                             resizeMode={'contain'}
                                             source={{ uri: item.goalIcon }} />
                                     </View>
-                                    <Text style={[styles.settingText, { marginLeft: PixelToDP(10),color: '#4bc9c1' }]}>{item.task}</Text>
+                                    <Text style={[styles.settingText, { marginLeft: PixelToDP(10), color: '#4bc9c1', borderBottomWidth: 0 }]}>{item.task}</Text>
                                     <TouchableOpacity style={{
                                         backgroundColor: '#2BCB4E',
                                         height: PixelToDP(25),

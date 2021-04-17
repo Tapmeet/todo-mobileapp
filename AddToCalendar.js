@@ -574,7 +574,7 @@ export class AddToCalendar extends PureComponent {
             }}
             source={require('./Images/gradient.png')}
             resizeMode={'stretch'} pointerEvents={this.state.isProcess ? 'none' : 'auto'}>
-            <SafeAreaView style={[styles.titlebar,{paddingBottom:25, borderBottomColor:"#fff", borderBottomWidth:4}]}>
+            <SafeAreaView style={styles.titlebar}>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate((this.props.navigation.getParam('FromCalenderOrGoal')== 'calender')?'calender':'CreateTaskDialog')}
                 style={styles.backTouch}>
@@ -650,7 +650,7 @@ export class AddToCalendar extends PureComponent {
                     this.setDate(this.state.sdate);
                     this.setState({isTaskStartDateSelected: true})
                 }}>
-                <Text style={styles.settingText}>Task Start Date</Text>
+                <Text style={[styles.settingText,{borderBottomWidth:0}]}>Task Start Date</Text>
                 <View
                   style={{
                     position: 'absolute',
@@ -658,7 +658,7 @@ export class AddToCalendar extends PureComponent {
                     flexDirection: 'row',
                   }}>
                   {/*{this.state.isTaskStartDateSelected && (*/}
-                    <Text style={styles.settingText}>
+                    <Text style={[styles.settingText,{borderBottomWidth:0}]}>
                       {/*{this.state.date.getFullYear()}-{this.state.date.getMonth()}-{this.state.date.getDate()}  {this.state.date.toLocaleTimeString()}*/}
                       {
                           (this.state.startDateFormat != '') ? this.getUSADateFormate(this.state.startDateFormat) : this.getUSADateFormate(this.state.startDateFormat)}
@@ -706,7 +706,7 @@ export class AddToCalendar extends PureComponent {
                   borderBottomWidth: PixelToDP(1),
                 }}
                 onPress={() => this.props.navigation.navigate('Repeat')}>
-                <Text style={styles.settingText}>Repeat</Text>
+                <Text style={[styles.settingText,{borderBottomWidth:0}]}>Repeat</Text>
 
                 <View
                   style={{
@@ -714,7 +714,7 @@ export class AddToCalendar extends PureComponent {
                     right: PixelToDP(0),
                     flexDirection: 'row',
                   }}>
-                  <Text style={styles.settingText}>
+                  <Text style={[styles.settingText,{borderBottomWidth:0}]}>
                     {/*{this.props.navigation.getParam('RepeatDay')*/}
                     {/*  ? this.props.navigation.getParam('RepeatDay')*/}
                     {/*  : 'Never'}*/}
@@ -749,7 +749,7 @@ export class AddToCalendar extends PureComponent {
                         position: 'bottom',
                       })
                 }>
-                <Text style={styles.settingText}>End Repeat</Text>
+                <Text style={[styles.settingText,{borderBottomWidth:0}]}>End Repeat</Text>
                 <View
                   style={{
                     position: 'absolute',
@@ -762,9 +762,9 @@ export class AddToCalendar extends PureComponent {
                   {/*  <Text style={styles.settingText}>{rod}</Text>*/}
                   {/*)}*/}
                   {this.state.repeatEndIndex === 1 ? (
-                      <Text style={styles.settingText}>{this.state.repeatEnd}</Text>
+                      <Text style={[styles.settingText,{borderBottomWidth:0}]}>{this.state.repeatEnd}</Text>
                   ) : (
-                      <Text style={styles.settingText}>{this.getUSADateFormate(this.state.repeatOnDate)}</Text>
+                      <Text style={[styles.settingText,{borderBottomWidth:0}]}>{this.getUSADateFormate(this.state.repeatOnDate)}</Text>
                   )}
                   <Icon
                     name="chevron-right"

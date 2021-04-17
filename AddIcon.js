@@ -254,14 +254,10 @@ export class AddIcon extends PureComponent {
           }}
           source={require('./Images/gradient.png')}
           resizeMode={'stretch'}>
-          <SafeAreaView style={[styles.titlebar, {
-              borderBottomWidth:4,
-              borderBottomColor:"#FFF",
-              paddingBottom: 15
-            }]}>
+          <SafeAreaView style={styles.titlebar}> 
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Home')}
-              style={[styles.backTouch, { paddingBottom:15}]}>
+              style={[styles.backTouch]}>
               <Image
                 style={styles.backImageIcon}
                 resizeMode={'stretch'}
@@ -284,11 +280,9 @@ export class AddIcon extends PureComponent {
                 source={require('./Images/logo.png')}
               /> */}
               <Text style={{
-                fontSize: responsiveFontSize(3.5),
+                fontSize: responsiveFontSize(2.5),
                 color: "white",
                 fontWeight: "bold",
-                paddingBottom: 15
-
               }}>Pick an Icon</Text>
             </View>
             <TouchableOpacity
@@ -296,7 +290,6 @@ export class AddIcon extends PureComponent {
               style={{
                 alignItems: "flex-end",
                 justifyContent: "flex-end",
-                paddingBottom: 5,
                 width: widthPercentageToDP(25),
                 paddingLeft: 30
               }}>
@@ -312,26 +305,7 @@ export class AddIcon extends PureComponent {
             </TouchableOpacity>
           </SafeAreaView>
           <View
-            style={{
-              borderWidth: 6,
-              borderRadius: PixelToDP(20),
-              borderColor: "#3a9f9a",
-              width: widthPercentageToDP(85),
-              alignSelf: 'center',
-              paddingTop: PixelToDP(25),
-              flexDirection: 'column',
-              alignItem: 'center',
-              paddingBottom: 50,
-              backgroundColor: "white",
-              shadowColor: '#121010',
-              shadowOffset: {
-                width: 0,
-                height: 10,
-              },
-              shadowOpacity: 0.8,
-              shadowRadius: 3.84,
-              elevation: 10,
-            }}>
+            style={styles.IconBox}>
             <View
               style={{
                 width: widthPercentageToDP(90),

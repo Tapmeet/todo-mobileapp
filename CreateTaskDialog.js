@@ -148,13 +148,10 @@ export class CreateTaskDialog extends PureComponent {
     return (
       <View style={[styles.flexScreen, { backgroundColor: '#22DCD3' }]}>
         <Root>
-          <SafeAreaView style={[styles.titlebar, {
-            borderBottomWidth: 4,
-            borderBottomColor: "#FFF"
-          }]}>
+          <SafeAreaView style={styles.titlebar}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('CreateGoal')}
-              style={[styles.backTouch, { paddingBottom: 25 }]}>
+              style={[styles.backTouch,]}>
               <Image
                 style={styles.backImageIcon}
                 resizeMode={'stretch'}
@@ -167,7 +164,7 @@ export class CreateTaskDialog extends PureComponent {
                  Back
             </Text>
             </TouchableOpacity>
-            <Text style={[styles.titleText, { paddingBottom: 25 }]}>Create Goal</Text>
+            <Text style={styles.titleText}>Create Goal</Text>
           </SafeAreaView>
           <View
             style={{

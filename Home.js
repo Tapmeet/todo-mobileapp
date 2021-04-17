@@ -153,8 +153,7 @@ export class Home extends PureComponent {
   render() {
     const { Goal } = this.state;
     return (
-      <View style={[styles.flexScreen, {
-      }]}>
+      <View style={styles.flexScreen}>
         <StatusBar
           backgroundColor="#22DCD3"
           barStyle="light-content"
@@ -164,19 +163,13 @@ export class Home extends PureComponent {
           <ImageBackground
             style={{
               width: widthPercentageToDP(100),
-              height: '100%', 
+              height: '100%',
               backgroundColor: "#22DCD3"
             }}
-           source={require('./Images/gradient.png')}
-           resizeMode={'stretch'}
+            source={require('./Images/gradient.png')}
+            resizeMode={'stretch'}
           >
-            <SafeAreaView style={[styles.titlebar, {
-              borderBottomColor: 'white',
-              borderBottomWidth: 4,
-              paddingBottom: 5,
-              paddingTop: 5,
-              marginBottom: 6,
-            }]}>
+            <SafeAreaView style={styles.titlebarHome}>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Statistics')}
                 style={{
@@ -232,54 +225,17 @@ export class Home extends PureComponent {
                 marginBottom: PixelToDP(30),
 
               }}>
-              <Text
-                style={{
-                  fontSize: responsiveFontSize(2.2),
-                  color: 'white',
-                  width: '100%',
-                  height: 'auto',
-                  textAlign: 'center',
-                  lineHeight: PixelToDP(25),
-                  fontFamily: 'Oswald-Regular',
-                  letterSpacing: 0.6,
-                  margin: 'auto',
-                }}>
+              <Text style={styles.homeText}>
                 Conscientiousness refers to the ability to organize yourself to achieve your goals and make change in your world.
             </Text>
               <Button
                 transparent
-                style={{
-                  borderWidth: PixelToDP(2.5),
-                  alignSelf: 'center',
-                  borderColor: '#58c3be',
-                  width: 'auto',
-                  height: 'auto',
-                  margin: PixelToDP(12),
-                  padding: PixelToDP(10),
-                  borderRadius: PixelToDP(50),
-                  backgroundColor: 'white',
-                  shadowColor: '#121010',
-                  shadowOffset: {
-                    width: 0,
-                    height: 6,
-                  },
-                  shadowOpacity: 0.25,
-                  shadowRadius: 3.84,
-                  elevation: 6,
-                }}
+                style={styles.homeButton}
                 onPress={() => this.props.navigation.navigate('AboutOne', {
                   comeFrom: "Home",
                 })}>
                 <Text
-                  style={{
-                    color: '#358e89',
-                    // fontSize: PixelToDP(14),
-                    fontSize: responsiveFontSize(1.8),
-                    textTransform: 'capitalize',
-                    fontFamily: 'Oswald-Regular',
-                    letterSpacing: 0.7,
-                    // fontFamily: "Oswald-Regular"
-                  }}>
+                  style={styles.homeButtonText}>
                   Press Here to Read More
               </Text>
               </Button>
@@ -306,26 +262,7 @@ export class Home extends PureComponent {
                     flexDirection: 'row',
                   }}>
                   <View
-                    style={{
-                      width: widthPercentageToDP(35),
-                      height: widthPercentageToDP(35),
-                      borderRadius: widthPercentageToDP(35),
-                      backgroundColor: '#30B3AB',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexDirection: 'column',
-                      //borderColor:"#31847f",
-                      borderColor: "#3a9f9a",
-                      borderWidth: 4,
-                      shadowColor: '#121010',
-                      shadowOffset: {
-                        width: 0,
-                        height: 6,
-                      },
-                      shadowOpacity: 0.4,
-                      shadowRadius: 3.84,
-                      elevation: 6,
-                    }}>
+                    style={styles.homeRoundButtons}>
                     <TouchableOpacity
                       style={{
                         width: '100%',
@@ -423,53 +360,6 @@ export class Home extends PureComponent {
                 </TouchableOpacity>
               ))}
             </View>
-
-            {/* <TouchableOpacity
-              style={{
-                alignSelf: 'center',
-                position: 'absolute',
-                bottom: PixelToDP(10),
-                alignItems: 'center',
-
-              }}
-              onPress={() => {
-                if (this.state.Goal.length == 8) {
-                  Alert.alert(
-                    'Alert',
-                    'Max goals reached. Please complete or delete one of your previous goals before starting a new one.',
-                    [
-                      {
-                        text: 'OK',
-                        onPress: () => {
-                          console.log('OK Pressed')
-                        }
-                      }])
-                } else {
-                  this.setState({
-                    CreateGoalDialogVisible: !this.state.CreateGoalDialogVisible,
-                  })
-                }
-              }
-              }>
-              <Image
-                style={{
-                  height: heightPercentageToDP(8),
-                  width: heightPercentageToDP(8),
-
-                }}
-                resizeMode={'contain'}
-                source={require('./Images/add.png')}
-              />
-              <Text
-                style={{
-                  color: '#399691',
-                  fontSize: responsiveFontSize(1.8),
-                  textAlign: 'center',
-                  fontFamily: "Oswald-Regular",
-                  letterSpacing: 1,
-                }}>
-              </Text>
-            </TouchableOpacity> */}
             <CreateGoalDialog
               visible={this.state.CreateGoalDialogVisible}
               onClose={goalTitle => {
@@ -491,54 +381,14 @@ export class Home extends PureComponent {
                 }
               }}
             />
-            {/*<EnterCode*/}
-            {/*    visible={this.state.AddCodeVisible}*/}
-            {/*    onClose={ async(code)=>{*/}
-            {/*        if(code != "" && code != null)*/}
-            {/*        {*/}
-            {/*            if(code ==Code.code) {*/}
-            {/*                await AsyncStorage.setItem('isLogin', 'true')*/}
-            {/*                this.setState({AddCodeVisible: false});*/}
-            {/*            }*/}
-            {/*            else{*/}
-            {/*                Toast.show({*/}
-            {/*                    text:"Please Enter right code",*/}
-            {/*                    buttonText:'hide',*/}
-            {/*                    position:'bottom'})*/}
-            {/*            }*/}
-            {/*        }*/}
-            {/*    }}*/}
-            {/*/>*/}
             <View
-              style={{
-                width: widthPercentageToDP(40),
-                borderRadius: widthPercentageToDP(40),
-                backgroundColor: '#8fc6c2',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                width: '90%',
-                marginTop: 50,
-                margin: 'auto',
-                alignSelf: 'center',
-                shadowColor: '#3ca29b',
-                shadowOffset: {
-                  width: 0,
-                  height: 5,
-                },
-                shadowOpacity: 0.25,
-                shadowRadius: 5.46,
-                elevation: 4,
-                position: 'absolute',
-                height: heightPercentageToDP(9),
-                top: heightPercentageToDP(77),
-              }}>
+              style={styles.buttonsFooter}>
               <TouchableOpacity
                 style={{
                   height: 'auto',
                   alignItems: 'center',
                 }}
-                onPress={() =>this.props.navigation.navigate('JournalListingsScreen')}>
+                onPress={() => this.props.navigation.navigate('JournalListingsScreen')}>
                 <Image
                   style={{
                     alignSelf: 'center',
@@ -581,18 +431,18 @@ export class Home extends PureComponent {
                     width: heightPercentageToDP(10.5),
                   }}
                   resizeMode={'contain'}
-                  source={require('./Images/plus.png')} 
+                  source={require('./Images/plus.png')}
                 />
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
                   height: 'auto',
-                  alignItems: 'center', 
+                  alignItems: 'center',
                 }}
                 onPress={() => this.props.navigation.navigate('Statistics')}>
                 <Image
                   style={{
-                    alignSelf: 'center', 
+                    alignSelf: 'center',
                     height: heightPercentageToDP(9),
                     width: heightPercentageToDP(9),
                   }}
@@ -602,44 +452,16 @@ export class Home extends PureComponent {
               </TouchableOpacity>
             </View>
             <View
-              style={{
-                width: widthPercentageToDP(40),
-                borderRadius: widthPercentageToDP(40),
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                width: '90%',
-                margin: 'auto',
-                alignSelf: 'center',
-                position: 'absolute',
-                top: heightPercentageToDP(95),
-              }}>
-              <Text style={{
-                color: "white",
-                fontSize: responsiveFontSize(2.2),
-                textTransform: 'capitalize',
-                fontFamily: 'Oswald-Regular',
-                letterSpacing: 0.7,
-              }}>
+              style={styles.buttonsFooterText}>
+              <Text style={styles.buttonsFooterTextTitle}>
                 Journal
                 </Text>
-              <Text style={{
-                color: "white",
-                fontSize: responsiveFontSize(2.2),
-                textTransform: 'capitalize',
-                fontFamily: 'Oswald-Regular',
-                letterSpacing: 0.7,
+              <Text style={[styles.buttonsFooterTextTitle, {
                 top: 5
-              }}>
+              }]}>
                 New Value
                 </Text>
-              <Text style={{
-                color: "white",
-                fontSize: responsiveFontSize(2.2),
-                textTransform: 'capitalize',
-                fontFamily: 'Oswald-Regular',
-                letterSpacing: 0.7,
-              }}>
+              <Text style={styles.buttonsFooterTextTitle}>
                 Stats
                 </Text>
             </View>

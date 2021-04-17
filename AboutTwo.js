@@ -8,9 +8,9 @@ import {
     ImageBackground,
     ScrollView
 } from "react-native";
-import {Text, Button} from 'native-base';
-import {styles} from "./CustomStyleSheet";
-import {heightPercentageToDP, PixelToDP, widthPercentageToDP} from './PixelRatio';
+import { Text, Button } from 'native-base';
+import { styles } from "./CustomStyleSheet";
+import { heightPercentageToDP, PixelToDP, widthPercentageToDP } from './PixelRatio';
 
 
 export class AboutTwo extends PureComponent {
@@ -28,31 +28,25 @@ export class AboutTwo extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                   <SafeAreaView style={[styles.titlebar, {
-                        borderBottomColor: 'white',
-                        borderBottomWidth: 4,
-                        paddingBottom: 5,
-                        paddingTop: 5,
-                        marginBottom: 6,
-                    }]}>
-                        <TouchableOpacity onPress={()=> this.props.navigation.navigate("AboutOne")} style={styles.backTouch}>
-                            <Image style={styles.backImageIcon} resizeMode={'stretch'} source={require('./Images/back.png')}/>
+                    <SafeAreaView style={styles.titlebar}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("AboutOne")} style={styles.backTouch}>
+                            <Image style={styles.backImageIcon} resizeMode={'stretch'} source={require('./Images/back.png')} />
                             <Text style={styles.aboutBack}>About</Text>
                         </TouchableOpacity>
                         <Text style={styles.titleText}>ABOUT</Text>
                         <TouchableOpacity style={{
                             // height:'100%',
                             // width:'auto',
-                            width:widthPercentageToDP(20),
-                            marginLeft:widthPercentageToDP(10)
+                            width: widthPercentageToDP(20),
+                            marginLeft: widthPercentageToDP(10)
                             // position:'absolute',
                             // right:PixelToDP(10)
-                        }} onPress={()=> this.props.navigation.navigate("AboutThree")}
+                        }} onPress={() => this.props.navigation.navigate("AboutThree")}
                         >
                             <Text style={{
-                                textTransform:'uppercase',
-                                fontSize:PixelToDP(16),
-                                color:'white',
+                                textTransform: 'uppercase',
+                                fontSize: PixelToDP(16),
+                                color: 'white',
                                 textAlign: 'center',
                                 textAlignVertical: 'center',
                                 // height:'100%',

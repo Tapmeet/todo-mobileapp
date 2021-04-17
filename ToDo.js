@@ -194,11 +194,7 @@ export class ToDo extends PureComponent {
           }}
           source={require('./Images/gradient.png')}
           resizeMode={'stretch'}>
-          <SafeAreaView style={[styles.titlebar, {
-            borderBottomWidth: 4,
-            borderBottomColor: "#FFF",
-            paddingBottom: 25
-          }]}>
+          <SafeAreaView style={styles.titlebar}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Home')}
               style={[styles.backTouch, {
@@ -298,7 +294,7 @@ export class ToDo extends PureComponent {
                         />
                       </View>
                       <Text
-                        style={[styles.settingText, { marginLeft: PixelToDP(10), color: '#4bc9c1' }]}>
+                        style={[styles.settingText, { marginLeft: PixelToDP(10), color: '#4bc9c1', borderBottomWidth:0 }]}>
                         {item.task}
                       </Text>
                       <View

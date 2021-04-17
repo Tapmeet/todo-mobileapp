@@ -106,13 +106,7 @@ export class EditJournalScreen extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={[styles.titlebar, {
-                        borderBottomColor: 'white',
-                        borderBottomWidth: 4,
-                        paddingBottom: 5,
-                        paddingTop: 5,
-                        marginBottom: 6,
-                    }]}>
+                    <SafeAreaView style={styles.titlebar}>
                         <TouchableOpacity
                             onPress={() => this.props.navigation.navigate('JournalListingsScreen')}
                             style={{
@@ -165,31 +159,11 @@ export class EditJournalScreen extends PureComponent {
                             alignItem: 'center',
                             height: '100%',
                             backgroundColor: '#30B3AB',
-
+                            marginTop: 0
 
                         }}>
                         <TextInput
-                            style={[
-                                styles.addTaskTextInput,
-                                {
-                                    borderColor: '#58c3be', textAlign: 'center', borderWidth: PixelToDP(1),
-                                    shadowColor: '#121010',
-                                    backgroundColor: "#fff",
-                                    fontSize: responsiveFontSize(2.3),
-                                    borderWidth: 4,
-                                    height: 55,
-                                    shadowOffset: {
-                                        width: 0,
-                                        height: 6,
-                                    },
-                                    shadowOpacity: 0.25,
-                                    shadowRadius: 3.84,
-                                    color: '#4bc9c1',
-                                    elevation: 6,
-                                    paddingTop: 10,
-                                    paddingBottom: 10
-                                },
-                            ]}
+                            style={styles.TextInputCommon}
                             onChangeText={this.handleTitle}
                             value={this.state.journalsTitle}
                             placeholder={'Name Your Journal:'}
@@ -214,7 +188,6 @@ export class EditJournalScreen extends PureComponent {
                                 style={{
                                     fontSize: responsiveFontSize(2.5),
                                     fontWeight: 'bold',
-                                    // height: PixelToDP(60),
                                     width: '100%',
                                     marginBottom: PixelToDP(5),
                                     textAlign: 'center',
@@ -222,7 +195,7 @@ export class EditJournalScreen extends PureComponent {
                                     color: '#4bc9c1',
                                     alignSelf: "center"
                                 }}> Your Journal!</Text>
-                            <View style={{
+                            <View style={[styles.boxShadow, {
                                 borderWidth: 6,
                                 borderTopLeftRadius: PixelToDP(40),
                                 borderBottomRightRadius: PixelToDP(40),
@@ -234,15 +207,8 @@ export class EditJournalScreen extends PureComponent {
                                 paddingtop: 35,
                                 paddingBottom: 35,
                                 justifyContent: "flex-start",
-                                shadowColor: '#121010',
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 10,
-                                },
-                                shadowOpacity: 0.8,
-                                shadowRadius: 3.84,
-                                elevation: 10,
-                            }}>
+
+                            }]}>
                                 <Text style={{ width: '90%', textAlign: "center", color: "white", alignSelf: "center", fontSize: responsiveFontSize(2), fontWeight: "bold" }}>Press Here To Enter Your Journal!</Text>
                                 <TextInput
                                     style={[
@@ -254,12 +220,6 @@ export class EditJournalScreen extends PureComponent {
                                     numberOfLines={15}
                                     placeholderTextColor="#ffffff"
                                     clearTextOnFocus={true}
-                                    // onKeyPress={(e) => {
-                                    //     if (e.nativeEvent.key == "Enter" || e.nativeEvent.key == "done") {
-                                    //         console.log('CreateTaskDialog onKeyPress is called');
-                                    //         Keyboard.dismiss();
-                                    //     }
-                                    // }}
                                     placeholder={
                                         'Description: Give more detail about this Journal.'
                                     }
@@ -269,31 +229,7 @@ export class EditJournalScreen extends PureComponent {
                             </View>
                         </View>
                         <Button
-                            style={{
-                                width: widthPercentageToDP(90),
-                                alignSelf: 'center',
-                                height: PixelToDP(40),
-                                alignItems: 'center',
-                                marginBottom: PixelToDP(10),
-                                marginTop: PixelToDP(20),
-                                borderColor: '#58c3be', textAlign: 'center', borderWidth: PixelToDP(1),
-                                shadowColor: '#121010',
-                                backgroundColor: "#fff",
-                                fontSize: responsiveFontSize(2.3),
-                                borderWidth: 4,
-                                height: 55,
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 6,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
-                                color: '#4bc9c1',
-                                elevation: 6,
-                                paddingTop: 10,
-                                paddingBottom: 10,
-                                borderRadius: 20,
-                            }}
+                            style={styles.buttonLogin}
                             onPress={this.updateTask}
                         >
                             <Text
@@ -311,29 +247,7 @@ export class EditJournalScreen extends PureComponent {
                         </Button>
                     </View>
                     <View
-                        style={{
-                            width: widthPercentageToDP(40),
-                            borderRadius: widthPercentageToDP(40),
-                            backgroundColor: '#8fc6c2',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            flexDirection: 'row',
-                            width: '90%',
-                            marginTop: 50,
-                            margin: 'auto',
-                            alignSelf: 'center',
-                            shadowColor: '#3ca29b',
-                            shadowOffset: {
-                                width: 0,
-                                height: 5,
-                            },
-                            shadowOpacity: 0.25,
-                            shadowRadius: 5.46,
-                            elevation: 4,
-                            position: 'absolute',
-                            height: heightPercentageToDP(9),
-                            top: heightPercentageToDP(77),
-                        }}>
+                        style={styles.buttonsFooter}>
                         <TouchableOpacity
                             style={{
                                 height: 'auto',
@@ -401,46 +315,12 @@ export class EditJournalScreen extends PureComponent {
                         </TouchableOpacity>
                     </View>
                     <View
-                        style={{
-                            width: widthPercentageToDP(40),
-                            borderRadius: widthPercentageToDP(40),
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            flexDirection: 'row',
-                            width: '90%',
-                            margin: 'auto',
-                            alignSelf: 'center',
-                            position: 'absolute',
-                            top: heightPercentageToDP(95),
-                        }}>
-                        <Text style={{
-                            color: "white",
-                            fontSize: responsiveFontSize(2.2),
-                            textTransform: 'capitalize',
-                            fontFamily: 'Oswald-Regular',
-                            letterSpacing: 0.7,
-                        }}>
-                            Back
-                </Text>
-                        <Text style={{
-                            color: "white",
-                            fontSize: responsiveFontSize(2.2),
-                            textTransform: 'capitalize',
-                            fontFamily: 'Oswald-Regular',
-                            letterSpacing: 0.7,
+                        style={styles.buttonsFooterText}>
+                        <Text style={styles.buttonsFooterTextTitle}>Back</Text>
+                        <Text style={[styles.buttonsFooterTextTitle, {
                             top: 5
-                        }}>
-                            New Journal
-                </Text>
-                        <Text style={{
-                            color: "white",
-                            fontSize: responsiveFontSize(2.2),
-                            textTransform: 'capitalize',
-                            fontFamily: 'Oswald-Regular',
-                            letterSpacing: 0.7,
-                        }}>
-                            Delete
-                </Text>
+                        }]}>New Journal </Text>
+                        <Text style={styles.buttonsFooterTextTitle}> Delete</Text>
                     </View>
                 </ImageBackground>
             </View>

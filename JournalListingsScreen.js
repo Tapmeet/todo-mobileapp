@@ -57,13 +57,7 @@ export class JournalListingsScreen extends PureComponent {
                     source={require('./Images/gradient.png')}
                     resizeMode={"stretch"}
                 >
-                    <SafeAreaView style={[styles.titlebar, {
-                        borderBottomColor: 'white',
-                        borderBottomWidth: 4,
-                        paddingBottom: 5,
-                        paddingTop: 5,
-                        marginBottom: 6,
-                    }]}>
+                    <SafeAreaView style={styles.titlebar}>
                         <TouchableOpacity
                             onPress={() => this.props.navigation.navigate('Home')}
                             style={{
@@ -119,7 +113,7 @@ export class JournalListingsScreen extends PureComponent {
                             zIndex: 333
 
                         }}>
-                       <Text style={styles.registerTitle}>Journals List!</Text>
+                        <Text style={styles.registerTitle}>Journals List!</Text>
                         {this.state.data.length > 0 ?
 
                             this.state.data.map((journals, index) => (
