@@ -557,7 +557,7 @@ export class AddToCalendar extends PureComponent {
                 <ActivityIndicator size="large" color="black" />
                 <Text style={{
                     color:'black',
-                    fontFamily: "Oswald-Regular",
+                    fontFamily: "SourceSansPro-Regular",
                     fontWeight: 'bold',
                     lineHeight: PixelToDP(25),
                     fontSize:PixelToDP(14),

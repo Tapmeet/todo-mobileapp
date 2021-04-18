@@ -186,30 +186,7 @@ export class JournalListingsScreen extends PureComponent {
                             </View>
                         }
                     </View>
-                    <View
-                        style={{
-                            width: widthPercentageToDP(40),
-                            borderRadius: widthPercentageToDP(40),
-                            backgroundColor: '#8fc6c2',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexDirection: 'row',
-                            width: '90%',
-                            marginTop: 50,
-                            margin: 'auto',
-                            alignSelf: 'center',
-                            shadowColor: '#3ca29b',
-                            shadowOffset: {
-                                width: 0,
-                                height: 5,
-                            },
-                            shadowOpacity: 0.25,
-                            shadowRadius: 5.46,
-                            elevation: 4,
-                            position: 'absolute',
-                            height: heightPercentageToDP(9),
-                            top: heightPercentageToDP(77),
-                        }}>
+                    <View style={[styles.buttonsFooter,{justifyContent:"center"}]}>
                         <TouchableOpacity
                             style={{
                                 height: 'auto',
@@ -228,27 +205,10 @@ export class JournalListingsScreen extends PureComponent {
                             />
                         </TouchableOpacity>
                     </View>
-                    <View
-                        style={{
-                            width: widthPercentageToDP(40),
-                            borderRadius: widthPercentageToDP(40),
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexDirection: 'row',
-                            width: '90%',
-                            margin: 'auto',
-                            alignSelf: 'center',
-                            position: 'absolute',
-                            top: heightPercentageToDP(95),
-                        }}>
-                        <Text style={{
-                            color: "white",
-                            fontSize: responsiveFontSize(2.2),
-                            textTransform: 'capitalize',
-                            fontFamily: 'Oswald-Regular',
-                            letterSpacing: 0.7,
+                    <View style={[styles.buttonsFooterText, ,{justifyContent:"center"}]}>
+                        <Text style={[styles.buttonsFooterTextTitle, {
                             top: 5
-                        }}>New Journal</Text>
+                        }]}>New Journal</Text>
 
                     </View>
                 </ImageBackground>

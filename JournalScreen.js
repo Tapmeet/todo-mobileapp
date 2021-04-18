@@ -203,19 +203,13 @@ export class JournalScreen extends PureComponent {
                                 <TextInput
                                     style={[
                                         styles.addTaskDescTextInputGoalTask,
-                                        { color: 'white', fontSize: responsiveFontSize(2), lineHeight: 30 },
+                                        { color: 'white', fontSize: responsiveFontSize(2.4), lineHeight: 30 },
                                     ]}
                                     multiline={true}
                                     returnKeyType={"done"}
                                     numberOfLines={15}
                                     placeholderTextColor="#ffffff"
                                     clearTextOnFocus={true}
-                                    // onKeyPress={(e) => {
-                                    //     if (e.nativeEvent.key == "Enter" || e.nativeEvent.key == "done") {
-                                    //         console.log('CreateTaskDialog onKeyPress is called');
-                                    //         Keyboard.dismiss();
-                                    //     }
-                                    // }}
                                     placeholder={
                                         'Description: Give more detail about this Journal.'
                                     }
@@ -229,15 +223,7 @@ export class JournalScreen extends PureComponent {
                             onPress={this.saveTask}
                         >
                             <Text
-                                style={{
-                                    color: '#4bc9c1',
-                                    width: '100%',
-                                    textTransform: 'uppercase',
-                                    fontSize: PixelToDP(18),
-                                    textAlign: 'center',
-                                    textAlignVertical: 'center',
-                                    fontWeight: "bold"
-                                }}>
+                               style={styles.journalsButtonText}>
                                 Submit
                             </Text>
                         </Button>

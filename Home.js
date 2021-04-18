@@ -171,22 +171,22 @@ export class Home extends PureComponent {
           >
             <SafeAreaView style={styles.titlebarHome}>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Statistics')}
+                //onPress={() => this.props.navigation.navigate('video')}
                 style={{
                   alignItems: 'center',
                   width: widthPercentageToDP(20),
                 }}>
-                {/* <Image
+                <Image
                 style={{
                     height: responsiveFontSize(4),
                     width: responsiveFontSize(4)
                 }}
                 resizeMode={'contain'}
-                source={require('./Images/statistics.png')}
-              /> */}
+                source={require('./Images/video-camera.png')}
+              />
               </TouchableOpacity>
               <View
-                style={{
+                style={{ 
                   alignItems: 'center',
                   width: widthPercentageToDP(60),
                 }}>

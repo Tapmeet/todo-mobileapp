@@ -135,7 +135,7 @@ export class Statistics extends PureComponent {
                             // marginTop:PixelToDP(10),
                             marginTop: responsiveFontSize(3),
                             fontWeight: 'bold',
-                            fontFamily: "Oswald-Regular"
+                            fontFamily: "SourceSansPro-Regular"
                         }}>Active Goals</Text>
                         {(this.state.activeGoal.length > 0) && (
                             <View style={{
@@ -245,7 +245,7 @@ export class Statistics extends PureComponent {
                             marginTop: responsiveFontSize(3),
                             // marginTop:PixelToDP(20),
                             fontWeight: 'bold',
-                            fontFamily: "Oswald-Regular"
+                            fontFamily: "SourceSansPro-Regular"
                         }}>Completed Goals</Text>
                         {(this.state.completeGoal.length > 0) && (
                             <View style={{

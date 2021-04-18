@@ -161,7 +161,7 @@ export class CreateTaskDialog extends PureComponent {
                 // fontSize: PixelToDP(16)
                 fontSize: responsiveFontSize(2.4)
               }]}>
-                 Back
+                Back
             </Text>
             </TouchableOpacity>
             <Text style={styles.titleText}>Create Goal</Text>
@@ -175,7 +175,7 @@ export class CreateTaskDialog extends PureComponent {
               alignItem: 'center',
               height: '75%',
               backgroundColor: '#30B3AB',
-              zIndex:333
+              zIndex: 333
 
             }}>
             <TextInput
@@ -241,7 +241,7 @@ export class CreateTaskDialog extends PureComponent {
                 }}>
                 Describe Your Goal!
             </Text>
-              <View style={{
+              <View style={[styles.boxShadow, {
                 borderWidth: 6,
                 borderTopLeftRadius: PixelToDP(40),
                 borderBottomRightRadius: PixelToDP(40),
@@ -253,20 +253,13 @@ export class CreateTaskDialog extends PureComponent {
                 paddingtop: 35,
                 paddingBottom: 35,
                 justifyContent: "flex-start",
-                shadowColor: '#121010',
-                shadowOffset: {
-                  width: 0,
-                  height: 10,
-                },
-                shadowOpacity: 0.8,
-                shadowRadius: 3.84,
-                elevation: 10,
-              }}>
+
+              }]}>
                 <Text style={{ width: '90%', textAlign: "center", color: "white", alignSelf: "center", fontSize: responsiveFontSize(2), fontWeight: "bold" }}>Press Here To Enter Your Goal!</Text>
                 <TextInput
                   style={[
                     styles.addTaskDescTextInputGoalTask,
-                    { color: 'white', fontSize: responsiveFontSize(2), lineHeight: 30 },
+                    { color: 'white', fontSize: responsiveFontSize(2.3), lineHeight: 30 },
                   ]}
                   ref='taskDescription'
                   multiline={true}
@@ -362,12 +355,12 @@ export class CreateTaskDialog extends PureComponent {
               // bottom: 0,
               justifyContent: 'flex-end',
               height: '20%',
-  
+
               // marginTop:heightPercentageToDP(90),
               width: widthPercentageToDP(100),
               alignSelf: 'center',
               backgroundColor: '#30B3AB',
-              marginTop:-35
+              marginTop: -35
             }}>
             {/* <Button
               style={{
@@ -391,30 +384,23 @@ export class CreateTaskDialog extends PureComponent {
             </Text>
             </Button> */}
             <Button
-              style={{
+              style={[styles.boxShadow, {
                 width: widthPercentageToDP(90),
                 alignSelf: 'center',
                 height: PixelToDP(40),
                 alignItems: 'center',
                 marginBottom: PixelToDP(10),
                 borderColor: '#58c3be', textAlign: 'center', borderWidth: PixelToDP(1),
-                shadowColor: '#121010',
                 backgroundColor: "#fff",
                 fontSize: responsiveFontSize(2.3),
                 borderWidth: 4,
                 height: 55,
-                shadowOffset: {
-                  width: 0,
-                  height: 6,
-                },
-                shadowOpacity: 0.25,
-                shadowRadius: 3.84,
                 color: '#4bc9c1',
                 elevation: 6,
                 paddingTop: 10,
                 paddingBottom: 10,
                 borderRadius: 20,
-              }}
+              }]}
               onPress={async () => {
                 const value = await AsyncStorage.getItem('reminder');
                 console.log('CreateTaskDialog, insert Date :', value);
@@ -455,7 +441,7 @@ export class CreateTaskDialog extends PureComponent {
                   fontSize: PixelToDP(18),
                   textAlign: 'center',
                   textAlignVertical: 'center',
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}>
                 {this.state.addToText == "To-Do" ? "Done" : "Next"}
               </Text>

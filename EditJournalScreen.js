@@ -185,16 +185,7 @@ export class EditJournalScreen extends PureComponent {
                             }}>
 
                             <Text
-                                style={{
-                                    fontSize: responsiveFontSize(2.5),
-                                    fontWeight: 'bold',
-                                    width: '100%',
-                                    marginBottom: PixelToDP(5),
-                                    textAlign: 'center',
-                                    textAlignVertical: 'center',
-                                    color: '#4bc9c1',
-                                    alignSelf: "center"
-                                }}> Your Journal!</Text>
+                                style={styles.journalsText}> Your Journal!</Text>
                             <View style={[styles.boxShadow, {
                                 borderWidth: 6,
                                 borderTopLeftRadius: PixelToDP(40),
@@ -213,7 +204,7 @@ export class EditJournalScreen extends PureComponent {
                                 <TextInput
                                     style={[
                                         styles.addTaskDescTextInputGoalTask,
-                                        { color: 'white', fontSize: responsiveFontSize(2), lineHeight: 30 },
+                                        { color: 'white', fontSize: responsiveFontSize(2.4), lineHeight: 30 },
                                     ]}
                                     multiline={true}
                                     returnKeyType={"done"}
@@ -233,15 +224,7 @@ export class EditJournalScreen extends PureComponent {
                             onPress={this.updateTask}
                         >
                             <Text
-                                style={{
-                                    color: '#4bc9c1',
-                                    width: '100%',
-                                    textTransform: 'uppercase',
-                                    fontSize: PixelToDP(18),
-                                    textAlign: 'center',
-                                    textAlignVertical: 'center',
-                                    fontWeight: "bold"
-                                }}>
+                                style={styles.journalsButtonText}>
                                 Update
                             </Text>
                         </Button>

@@ -467,7 +467,7 @@ export class AddIcon extends PureComponent {
           <Root>
           <Button
               transparent
-              style={{
+              style={[styles.boxShadow,{
                 borderWidth: PixelToDP(5),
                 alignSelf: 'center',
                 borderColor: '#58c3be',
@@ -476,31 +476,22 @@ export class AddIcon extends PureComponent {
                 padding: PixelToDP(10),
                 borderRadius: PixelToDP(20),
                 backgroundColor: 'white',
-                shadowColor: '#121010',
                 justifyContent:"center",
                 marginTop:0,
-                shadowOffset: {
-                  width: 0,
-                  height: 6,
-                },
-                shadowOpacity: 0.25,
-                shadowRadius: 3.84,
-                elevation: 6,
-              }}
+              }]}
               onPress={this.saveGoal.bind(this)}
               >
               <Text
                 style={{
                   color: '#358e89',
-                  // fontSize: PixelToDP(14),
-                  fontSize: responsiveFontSize(2.5),
+                  fontSize: responsiveFontSize(2.8),
                   textTransform: 'capitalize',
-                  fontFamily: 'Oswald-Regular',
+                  fontFamily: 'SourceSansPro-Regular',
                   letterSpacing: 0.7,
                   alignSelf:"center",
                   textAlign:"center",
                   width:widthPercentageToDP(100)
-                  // fontFamily: "Oswald-Regular"
+                  
                 }}>
                 Next
               </Text>

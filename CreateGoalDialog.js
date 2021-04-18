@@ -86,7 +86,7 @@ export class CreateGoalDialog extends PureComponent {
                   color: '#4bc9c1',
                   fontSize: responsiveFontSize(2.5),
                   textTransform: 'capitalize',
-                  fontFamily: 'Oswald-Regular',
+                  fontFamily: 'SourceSansPro-Regular',
                   letterSpacing: 0.7,
                   alignSelf: "center",
                   textAlign: "center",

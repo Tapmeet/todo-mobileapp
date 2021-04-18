@@ -21,62 +21,53 @@ export class LoginScreen extends PureComponent {
         header: null,
     };
     state = {
-        journalsTitle: '',
-        journalsDescription: '',
+        email: '',
+        password: '',
+        errorMessage: ''
 
     };
-    constructor(props) {
-        super(props);
-        this.saveTask.bind(this)
-    }
-    handleTitle = text => {
-
-        this.setState({ journalsTitle: text });
+    ValidateEmail = (mail) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
     };
-    handleDescription = text => {
-        this.setState({ journalsDescription: text });
+    handleEmail = text => {
+        this.setState({ email: text });
     };
-    saveTask = () => {
-        // console.log(this.state.journalsTitle)
-        db.getJournals().then(result => {
-            let len = result.length;
-            let data = {
-                Id: len + 1,
-                journalsTitle: this.state.journalsTitle,
-                journalsDescription: this.state.journalsDescription,
-            };
-            if (this.state.journalsTitle == '' && this.state.journalsDescription == '') {
-                Alert.alert(
-                    'Alert',
-                    'All Fields are neccessary.',
-                    [
-                        {
-                            text: 'Ok',
-                            onPress: () => console.log('Cancel Pressed'),
-                            style: 'cancel',
-                        },
-
-                    ],
-                    { cancelable: false },
-                );
-                return false
-            }
-            db.insertInToJournals(data)
-                .then(result => {
-                    console.log('data saved:' + result);
-                    this.props.navigation.navigate('JournalListingsScreen', {
-                        resultId: result.Id,
-                    });
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-
-        });
-
-        console.log('data will be save');
-        //db.insertInToTasks(data)
-
+    handlePassword = text => {
+        this.setState({ password: text });
+    };
+    handleLogin = () => {
+        this.setState({ errorMessage: '' });
+        if (this.state.email == "") {
+            this.setState({ errorMessage: "Enter Email" });
+            return false;
+        }
+        let checkemail = this.ValidateEmail(this.state.email);
+        if (checkemail == false) {
+            this.setState({ errorMessage: "Enter Valid Email" });
+            return false;
+        }
+        if (this.state.password == "") {
+            this.setState({ errorMessage: "Enter Pasword" });
+            return false;
+        }
+        fetch(`http://192.168.18.22:2000/api/auth/login`, {
+            method: "POST",
+            headers: {
+                Accept: "*/*",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: this.state.email,
+                password: this.state.password,
+            }),
+        })
+            .then((response) => response.json())
+            .then((response) => {
+                console.log(response);
+            })
+            .catch(function (data) {
+                console.log(data);
+            });
     }
     render() {
         return (
@@ -149,23 +140,27 @@ export class LoginScreen extends PureComponent {
                         <Text style={[styles.loginText]}>Sign in to Continue</Text>
                         <TextInput
                             style={styles.TextInputCommon}
-                            onChangeText={this.handleTitle}
-                            value={this.state.journalsTitle}
+                            onChangeText={this.handleEmail}
+                            value={this.state.email}
                             placeholder={'Email'}
                             placeholderTextColor="#4bc9c1"
 
                         />
                         <TextInput
                             style={styles.TextInputCommon}
-                            onChangeText={this.handleTitle}
-                            value={this.state.journalsTitle}
+                            onChangeText={this.handlePassword}
+                            value={this.state.password}
                             placeholder={'Password'}
                             placeholderTextColor="#4bc9c1"
+                            secureTextEntry
 
                         />
+                        {this.state.errorMessage != '' ? (
+                            <Text style={styles.errorMessage}>{this.state.errorMessage}</Text>
+                        ) : null}
                         <Button
                             style={styles.buttonLogin}
-                            onPress={this.saveTask}
+                            onPress={this.handleLogin}
                         >
                             <Text
                                 style={{

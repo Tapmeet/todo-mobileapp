@@ -41,8 +41,8 @@ export const styles = StyleSheet.create({
   boxShadow: {
     shadowColor: '#121010',
     shadowOffset: {
-        width: 0,
-        height: 6,
+      width: 0,
+      height: 6,
     },
     shadowOpacity: 0.8,
     shadowRadius: 3.84,
@@ -69,9 +69,9 @@ export const styles = StyleSheet.create({
   },
   homeButtonText: {
     color: '#358e89',
-    fontSize: responsiveFontSize(1.8),
+    fontSize: responsiveFontSize(2.2),
     textTransform: 'capitalize',
-    fontFamily: 'Oswald-Regular',
+    fontFamily: 'SourceSansPro-Regular',
     letterSpacing: 0.7,
   },
   homeRoundButtons: {
@@ -95,13 +95,13 @@ export const styles = StyleSheet.create({
     elevation: 6,
   },
   homeText: {
-    fontSize: responsiveFontSize(2.2),
+    fontSize: responsiveFontSize(2.5),
     color: 'white',
     width: '100%',
     height: 'auto',
     textAlign: 'center',
     lineHeight: PixelToDP(25),
-    fontFamily: 'Oswald-Regular',
+    fontFamily: 'SourceSansPro-Regular',
     letterSpacing: 0.6,
     margin: 'auto',
   },
@@ -112,7 +112,7 @@ export const styles = StyleSheet.create({
   },
   backLogo: {
     color: 'white',
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
     fontSize: responsiveFontSize(2),
     marginLeft: PixelToDP(3),
     width: widthPercentageToDP(30),
@@ -128,8 +128,8 @@ export const styles = StyleSheet.create({
     marginLeft: widthPercentageToDP(3)
   },
   titleText: {
-    fontSize: responsiveFontSize(2.4),
-    fontFamily: "Oswald-Regular",
+    fontSize: responsiveFontSize(2.6),
+    fontFamily: "SourceSansPro-Regular",
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
@@ -153,7 +153,7 @@ export const styles = StyleSheet.create({
   settingHeading: {
     color: 'white',
     fontSize: responsiveFontSize(2.4),
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
     fontWeight: 'bold',
     lineHeight: PixelToDP(25),
     textTransform: 'uppercase',
@@ -182,7 +182,7 @@ export const styles = StyleSheet.create({
   },
 
   OswaldFont: {
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
   },
   calendar: {
     borderTopWidth: 1,
@@ -253,7 +253,7 @@ export const styles = StyleSheet.create({
     borderWidth: PixelToDP(1),
     textAlign: 'center',
     padding: PixelToDP(10),
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
     fontSize: responsiveFontSize(1.5)
   },
   addTaskDescTextInput: {
@@ -266,7 +266,7 @@ export const styles = StyleSheet.create({
     borderWidth: PixelToDP(1),
     padding: PixelToDP(10),
     fontSize: PixelToDP(12),
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
     textAlign: 'left',
   },
   addTaskDescTextInputGoal: {
@@ -275,8 +275,8 @@ export const styles = StyleSheet.create({
     marginBottom: PixelToDP(20),
     marginTop: PixelToDP(20),
     padding: PixelToDP(10),
-    fontSize: PixelToDP(12),
-    fontFamily: "Oswald-Regular",
+    fontSize: PixelToDP(18),
+    fontFamily: "SourceSansPro-Regular",
     textAlign: 'left',
     color: "white",
     alignSelf: "flex-start",
@@ -294,7 +294,7 @@ export const styles = StyleSheet.create({
     marginTop: PixelToDP(10),
     padding: PixelToDP(10),
     fontSize: PixelToDP(12),
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
     textAlign: 'left',
     color: "white",
     alignSelf: "flex-start",
@@ -331,9 +331,9 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: PixelToDP(16),
     textAlign: 'center',
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
     color: "#fff",
-
+    fontSize: responsiveFontSize(2.4)
 
   },
 
@@ -455,7 +455,7 @@ export const styles = StyleSheet.create({
     marginTop: PixelToDP(20),
     width: widthPercentageToDP(90),
     alignSelf: 'center',
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
     textAlign: 'justify'
   },
   taskCompleted: {
@@ -502,7 +502,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     textAlign: 'center',
-    fontFamily: "Oswald-Regular"
+    fontFamily: "SourceSansPro-Regular"
   },
   dailyRemainderTextDayActive: {
     color: '#30B3AB',
@@ -510,7 +510,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     textAlign: 'center',
-    fontFamily: "Oswald-Regular"
+    fontFamily: "SourceSansPro-Regular"
   },
   customImage: {
     alignSelf: 'center',
@@ -643,6 +643,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     height: heightPercentageToDP(9),
     top: heightPercentageToDP(77),
+
   },
   buttonsFooterText: {
     width: widthPercentageToDP(40),
@@ -655,12 +656,13 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     position: 'absolute',
     top: heightPercentageToDP(95),
+
   },
   buttonsFooterTextTitle: {
     color: "white",
-    fontSize: responsiveFontSize(2.2),
+    fontSize: responsiveFontSize(2.6),
     textTransform: 'capitalize',
-    fontFamily: 'Oswald-Regular',
+    fontFamily: 'SourceSansPro-Regular',
     letterSpacing: 0.7,
   },
   modalOuter: {
@@ -759,14 +761,14 @@ export const styles = StyleSheet.create({
     borderWidth: PixelToDP(1),
     textAlign: 'center',
     padding: PixelToDP(10),
-    fontFamily: "Oswald-Regular",
+    fontFamily: "SourceSansPro-Regular",
     fontSize: responsiveFontSize(1.5),
     borderColor: '#58c3be',
     textAlign: 'center',
     borderWidth: PixelToDP(1),
     shadowColor: '#121010',
     backgroundColor: "#fff",
-    fontSize: responsiveFontSize(2.3),
+    fontSize: responsiveFontSize(2.5),
     borderWidth: 4,
     height: 55,
     shadowOffset: {
@@ -804,5 +806,31 @@ export const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     borderRadius: 20,
+  },
+  journalsText: {
+    fontSize: responsiveFontSize(2.5),
+    fontWeight: 'bold',
+    width: '100%',
+    marginBottom: PixelToDP(5),
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    color: '#4bc9c1',
+    alignSelf: "center"
+  },
+  journalsButtonText: {
+    color: '#4bc9c1',
+    width: '100%',
+    textTransform: 'uppercase',
+    fontSize: PixelToDP(18),
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    fontWeight: "bold"
+  },
+  errorMessage: {
+    alignItems:"center",
+    alignSelf:"center",
+    fontSize:responsiveFontSize(2.0),
+    color:"#ff0000",
+    marginBottom:-10
   }
 });

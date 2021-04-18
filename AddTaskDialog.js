@@ -72,42 +72,10 @@ export class AddTaskDialog extends PureComponent {
         <KeyboardAvoidingView
           tyle={styles.container} behavior="position" enabled>
           <Card
-            style={{
-              backgroundColor: 'white',
-              borderRadius: PixelToDP(20),
-              height: heightPercentageToDP(70),
-              // height:'auto',
-              width: widthPercentageToDP(90),
-              alignSelf: 'center',
-              marginTop: PixelToDP(40),
-              // position:'absolute',
-              // // top:heightPercentageToDP(20),
-              // bottom:heightPercentageToDP(20)
-              // marginBottom: heightPercentageToDP(20),
-            }}
+               style={styles.modalBg}
           >
             <View
-              style={{
-                borderWidth: 6,
-                borderRadius: PixelToDP(20),
-                borderColor: "#3a9f9a",
-                width: widthPercentageToDP(90),
-                alignSelf: 'center',
-                paddingTop: PixelToDP(35),
-                flexDirection: 'column',
-                alignItem: 'center',
-                height: '100%',
-                paddingBottom: 50,
-                shadowColor: '#121010',
-                shadowOffset: {
-                  width: 0,
-                  height: 10,
-                },
-                shadowOpacity: 0.8,
-                shadowRadius: 3.84,
-                elevation: 10,
-                backgroundColor: "#fff"
-              }}>
+              style={styles.modalOuter}>
               {/*{console.log("task : ",this.props.selectedTask.task)}*/}
               {/*<Text style={styles.addTaskTextInput}>{task}</Text>*/}
               <TextInput
@@ -141,31 +109,11 @@ export class AddTaskDialog extends PureComponent {
                   }
                 }}
               />
-              <View style={{
-                borderWidth: 6,
-                borderTopLeftRadius: PixelToDP(40),
-                borderBottomRightRadius: PixelToDP(40),
-                borderColor: "#3a9f9a",
-                width: widthPercentageToDP(75),
-                alignSelf: "center",
-                backgroundColor: "#22DCD3",
-                padding: 15,
-                paddingtop: 35,
-                paddingBottom: 35,
-                justifyContent: "flex-start",
-                shadowColor: '#121010',
-                shadowOffset: {
-                  width: 0,
-                  height: 10,
-                },
-                shadowOpacity: 0.8,
-                shadowRadius: 3.84,
-                elevation: 10,
-              }}>
+              <View style={styles.modalTextArea}>
                 <TextInput
                   style={[
                     styles.addTaskDescTextInputGoalTask,
-                    { color: 'white', fontSize: responsiveFontSize(2), lineHeight: 30 },
+                    { color: 'white', fontSize: responsiveFontSize(2.3), lineHeight: 30 },
                   ]}
                   value={taskDescription}
                   multiline={true}

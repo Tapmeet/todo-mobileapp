@@ -226,7 +226,7 @@ export class ToDo extends PureComponent {
                   color: 'white',
                   textAlign: 'center',
                   textAlignVertical: 'center',
-                  // fontFamily: "Oswald-Regular"
+                  // fontFamily: "SourceSansPro-Regular"
                   // height: '100%',
                 }}>
                 Accomplished
@@ -261,29 +261,20 @@ export class ToDo extends PureComponent {
                   keyExtractor={(item, index) => index.toString()}
                   renderItem={({ item }) => (
                     <View
-                      style={{
+                      style={[styles.boxShadow, {
                         flexDirection: 'row',
                         width: '100%',
                         height: PixelToDP(55),
-                        // borderBottomColor: '(rgba(255, 255, 255, 0.29)',
-                        // borderBottomWidth: PixelToDP(1),
-                        shadowColor: '#121010',
                         backgroundColor: "#fff",
                         borderColor: '#58c3be',
                         textAlign: 'center',
                         borderWidth: PixelToDP(3),
                         alignItems: 'center',
                         borderRadius: 20,
-                        shadowOffset: {
-                          width: 0,
-                          height: 6,
-                        },
-                        shadowOpacity: 0.25,
-                        shadowRadius: 3.84,
                         paddingLeft: 5,
                         marginTop: 15,
                         marginBottom: 10
-                      }}
+                      }]}
                     >
                       <View style={[styles.taskImageBorderToDoWhite, { backgroundColor: '#58c3be' }]}>
                         <Image
@@ -294,7 +285,7 @@ export class ToDo extends PureComponent {
                         />
                       </View>
                       <Text
-                        style={[styles.settingText, { marginLeft: PixelToDP(10), color: '#4bc9c1', borderBottomWidth:0 }]}>
+                        style={[styles.settingText, { marginLeft: PixelToDP(10), color: '#4bc9c1', borderBottomWidth: 0 }]}>
                         {item.task}
                       </Text>
                       <View
@@ -376,10 +367,8 @@ export class ToDo extends PureComponent {
                         </TouchableOpacity>
                         <TouchableOpacity
                           style={{
-                            // backgroundColor:'#3BDE86',
+                             backgroundColor:'#3BDE86',
                             borderRadius: PixelToDP(30),
-                            // width: PixelToDP(30),
-                            // height: PixelToDP(30),
                             width: widthPercentageToDP(8),
                             height: widthPercentageToDP(8),
                             justifyContent: 'center',
@@ -403,17 +392,17 @@ export class ToDo extends PureComponent {
                               { cancelable: false },
                             );
                           }}>
-                          {/*<Icon*/}
-                          {/*    name="check"*/}
-                          {/*    type="Feather"*/}
-                          {/*    style={{*/}
-                          {/*        color: "white",*/}
-                          {/*        alignSelf:'center',*/}
-                          {/*        fontSize: PixelToDP(16),*/}
+                          <Icon
+                            name="check"
+                            type="Feather"
+                            style={{
+                              color: "white",
+                              alignSelf: 'center',
+                              fontSize: PixelToDP(16),
+                            }
 
-                          {/*    }}*/}
-
-                          {/*/>*/}
+                            }
+                          />
                         </TouchableOpacity>
                       </View>
                     </View>
@@ -422,51 +411,10 @@ export class ToDo extends PureComponent {
               </View>
             }
           </ScrollView>
-          {/* <TouchableOpacity
-            style={{
-              alignSelf: 'center',
-              position: 'absolute',
-              bottom: PixelToDP(10),
-            }}
-            onPress={() => {
-              selectedTask = null;
-              this.setState({ AddTaskVisible: !this.state.AddTaskVisible });
-            }}>
-            <Image
-              style={{
-                // height: PixelToDP(55),
-                // width: PixelToDP(55),
-                height: responsiveFontSize(7),
-                width: responsiveFontSize(7)
-              }}
-              resizeMode={'contain'}
-              source={require('./Images/add.png')}
-            />
-          </TouchableOpacity> */}
           <View
-            style={{
-              width: widthPercentageToDP(40),
-              borderRadius: widthPercentageToDP(40),
-              backgroundColor: '#8fc6c2',
-              alignItems: 'center',
+            style={[styles.buttonsFooter, {
               justifyContent: 'center',
-              flexDirection: 'row',
-              width: '90%',
-              marginTop: 50,
-              margin: 'auto',
-              alignSelf: 'center',
-              shadowColor: '#3ca29b',
-              shadowOffset: {
-                width: 0,
-                height: 5,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 5.46,
-              elevation: 4,
-              position: 'absolute',
-              height: heightPercentageToDP(9),
-              top: heightPercentageToDP(77),
-            }}>
+            }]}>
             <TouchableOpacity
               style={{
                 height: 'auto',
@@ -489,26 +437,13 @@ export class ToDo extends PureComponent {
             </TouchableOpacity>
           </View>
           <View
-            style={{
-              width: widthPercentageToDP(40),
-              borderRadius: widthPercentageToDP(40),
-              alignItems: 'center',
+            style={[styles.buttonsFooterText, {
               justifyContent: 'center',
-              flexDirection: 'row',
-              width: '90%',
-              margin: 'auto',
               alignSelf: 'center',
-              position: 'absolute',
-              top: heightPercentageToDP(95),
-            }}>
-            <Text style={{
-              color: "white",
-              fontSize: responsiveFontSize(2.2),
-              textTransform: 'capitalize',
-              fontFamily: 'Oswald-Regular',
-              letterSpacing: 0.7,
-              top: 5
-            }}>Add New </Text>
+            }]}>
+            <Text style={[styles.buttonsFooterTextTitle, {
+              top: 0
+            }]}>Add New </Text>
 
           </View>
           <AddTaskDialog

@@ -349,11 +349,7 @@ export class calender extends PureComponent {
           }}
           source={require('./Images/gradient.png')}
           resizeMode={'stretch'}>
-          <SafeAreaView style={[styles.titlebar, {
-            borderBottomWidth: 4,
-            borderBottomColor: "#FFF",
-            paddingBottom: 25
-          }]}>
+          <SafeAreaView style={styles.titlebar}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Home')}
               style={styles.backTouch}>
@@ -473,7 +469,7 @@ export class calender extends PureComponent {
                         <Text
                           style={[
                             styles.settingText,
-                            { marginLeft: PixelToDP(10), borderBottomWidth:0 },
+                            { marginLeft: PixelToDP(10), borderBottomWidth: 0 },
                           ]}>
                           {item.task}
                         </Text>
@@ -616,7 +612,7 @@ export class calender extends PureComponent {
               )}
             </View>
           </ScrollView>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={{
               alignSelf: 'center',
               position: 'absolute',
@@ -636,8 +632,35 @@ export class calender extends PureComponent {
               resizeMode={'contain'}
               source={require('./Images/add.png')}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+            <View style={[styles.buttonsFooter,{justifyContent:"center"}]}>
+            <TouchableOpacity
+              style={{
+                height: 'auto',
+                alignItems: 'center',
+              }}
+              onPress={() => {
+                selectedTask = null;
+                this.setState({ AddTaskVisible: !this.state.AddTaskVisible });
+              }}
+            >
+              <Image
+                style={{
+                  alignSelf: 'center',
+                  height: heightPercentageToDP(10.5),
+                  width: heightPercentageToDP(10.5),
+                }}
+                resizeMode={'contain'}
+                source={require('./Images/plus.png')}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={[styles.buttonsFooterText, ,{justifyContent:"center"}]}>
+            <Text style={[styles.buttonsFooterTextTitle, {
+              top: 5
+            }]}>Add</Text>
 
+          </View>
           <AddTaskDialog
             visible={this.state.AddTaskVisible}
             addTo={2}
