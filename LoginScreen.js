@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import {
     View,
     Image,
@@ -13,19 +13,31 @@ import {
 import SQLdatabase from './SQLdatabase';
 import { Text, Button, Content, Form, Item, Input, Textarea, Label, Icon, Footer, FooterTab } from 'native-base';
 import { styles } from "./CustomStyleSheet";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addUser } from "./redux/UserActions"
 import { heightPercentageToDP, PixelToDP, responsiveFontSize, widthPercentageToDP } from './PixelRatio';
 const db = new SQLdatabase();
 //await AsyncStorage.setItem('isLogin', 'true');
-export class LoginScreen extends PureComponent {
+function mapDispatchToProps(dispatch) {
+    return {
+        addUser: userinfo => dispatch(addUser(userinfo))
+    };
+}
+class Login extends Component {
     static navigationOptions = {
         header: null,
     };
-    state = {
-        email: '',
-        password: '',
-        errorMessage: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            errorMessage: ''
 
-    };
+        };
+        this.handleLogin = this.handleLogin.bind(this);
+    }
     ValidateEmail = (mail) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
     };
@@ -35,6 +47,7 @@ export class LoginScreen extends PureComponent {
     handlePassword = text => {
         this.setState({ password: text });
     };
+
     handleLogin = () => {
         this.setState({ errorMessage: '' });
         if (this.state.email == "") {
@@ -63,8 +76,10 @@ export class LoginScreen extends PureComponent {
         })
             .then((response) => response.json())
             .then((response) => {
-                console.log(response);
-            })
+                // userData = userInfo => dispatch({ type: "LOGGED_IN_USER", payload: userInfo })
+                // console.log(response);
+                this.props.addUser({ "id": 1, 'token':response.token})
+            }) 
             .catch(function (data) {
                 console.log(data);
             });
@@ -184,3 +199,11 @@ export class LoginScreen extends PureComponent {
         );
     }
 }
+const LoginScreen = connect(
+    null,
+    mapDispatchToProps
+  )(Login);
+  
+export default LoginScreen;
+
+//export default connect(null, mapDispatchToProps)(LoginScreen); 

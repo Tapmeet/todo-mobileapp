@@ -25,7 +25,7 @@ import { AsyncStorage } from 'react-native';
 import { JournalScreen } from './JournalScreen';
 import { JournalListingsScreen } from './JournalListingsScreen';
 import { EditJournalScreen } from './EditJournalScreen';
-import { LoginScreen } from './LoginScreen';
+import  LoginScreen  from './LoginScreen'
 import { SignupScreen } from './SignupScreen';
 let isLogin;
 const AppNavigator = createStackNavigator(

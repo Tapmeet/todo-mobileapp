@@ -29,6 +29,7 @@ import NotifService from './NotifService';
 import { setNotification } from './setNotification';
 import { EnterCode } from './EnterCode';
 import { Code } from './InsertInToDatabase';
+import { connect } from "react-redux";
 
 const db = new SQLdatabase();
 
