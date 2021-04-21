@@ -19,7 +19,7 @@ import { styles } from './CustomStyleSheet';
 import {
   heightPercentageToDP,
   PixelToDP,
-  widthPercentageToDP,
+  widthPercentageToDP, 
   responsiveFontSize
 } from './PixelRatio';
 import { AddTaskDialog } from './AddTaskDialog';
@@ -50,6 +50,7 @@ export class Home extends PureComponent {
       Icon: '',
       customImg: 0,
       isGoalsLoading: true,
+
     };
     this.notif = new NotifService(
       this.onRegister.bind(this),
